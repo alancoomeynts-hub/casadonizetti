@@ -1,0 +1,20 @@
+:root {
+  --navbar: #556B2F;
+  --main-bg: #F7F3EC;
+  --footer: #A85D43;
+
+  --nav-link: #F7F3EC;
+  --nav-link-hover: #F0E6D8;
+  --nav-link-active: #FFFFFF;
+
+  --nav-cta: #96472F;
+  --nav-cta-hover: #8B422C;
+
+  --heading-primary: #2F2A24;
+  --heading-secondary: #5B4A3F;
+  --text-main: #3A342E;
+
+  --footer-link: #FFF8F2;
+  --footer-link-hover: #FFFFFF;
+  --footer-link-active: #F0E6D8;
+}
