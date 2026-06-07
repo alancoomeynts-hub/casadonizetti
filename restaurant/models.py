@@ -14,3 +14,14 @@ class Restaurant(models.Model):
 
     def __str__(self):
         return f'{self.name}'
+
+class SocialLink(models.Model):
+
+
+    restaurant = models.ForeignKey(Restaurant, on_delete=models.CASCADE, related_name='social_links')
+    platform=models.CharField(max_length=20)
+    url = models.URLField()
+    icon = models.CharField(max_length=20,default='')
+
+    def __str__(self):
+        return f'{self.platform}'
