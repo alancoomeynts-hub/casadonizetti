@@ -1,0 +1,37 @@
+<component name="InspectionProjectProfileManager">
+  <profile version="1.0">
+    <option name="myName" value="Project Default" />
+    <inspection_tool class="PyPackageRequirementsInspection" enabled="true" level="WARNING" enabled_by_default="true">
+      <option name="ignoredPackages">
+        <list>
+          <option value="asgiref" />
+          <option value="bleach" />
+          <option value="certifi" />
+          <option value="cffi" />
+          <option value="charset-normalizer" />
+          <option value="cryptography" />
+          <option value="defusedxml" />
+          <option value="dj-database-url" />
+          <option value="Django" />
+          <option value="django-allauth" />
+          <option value="django-summernote" />
+          <option value="gunicorn" />
+          <option value="idna" />
+          <option value="oauthlib" />
+          <option value="packaging" />
+          <option value="psycopg2" />
+          <option value="pycparser" />
+          <option value="PyJWT" />
+          <option value="python3-openid" />
+          <option value="requests" />
+          <option value="requests-oauthlib" />
+          <option value="sqlparse" />
+          <option value="tzdata" />
+          <option value="urllib3" />
+          <option value="webencodings" />
+          <option value="whitenoise" />
+        </list>
+      </option>
+    </inspection_tool>
+  </profile>
+</component>
