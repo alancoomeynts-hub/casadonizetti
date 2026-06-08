@@ -1,5 +1,7 @@
 from django.shortcuts import render
-from django.http import HttpResponse
+from .models import Restaurant
 
-def index(request):
-    return HttpResponse("Hello,World")
+
+def restaurant_homepage(request):
+    restaurant = Restaurant.objects.first()
+    return render(request, 'homepage.html', {'restaurant': restaurant})

@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+    {%  if restaurant %}
+            <h1>{{ restaurant.name }}</h1>
+            <p>{{ restaurant.content }}</p>
+    {% else %}
+           <p>No restaurant data yet.</p>
+    {% endif %}
+{% endblock content %}
