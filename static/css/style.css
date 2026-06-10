@@ -16,7 +16,7 @@
 
   --heading-primary: #2F2A24;
   --heading-secondary: #5B4A3F;
-  --text-main: #3A342E;
+  --text-main: black;
 
   --footer-link: #FFF8F2;
   --footer-link-hover: #FFFFFF;
@@ -45,7 +45,27 @@ body{
   color: var(--nav-link);
   font-weight: 500;
 }
+.navbar-brand img {
+    max-height: 50px;
+    width: 200px;
+    display: block;
+}
+
+.cta-btn{
+  background-color: var(--nav-cta);
+  font-family: var(--font-headings);
+  font-size: 1.2rem;
+  color: var(--text-main);
+  border: 2px solid var(--nav-cta-hover);
+  font-weight: 500;
+  letter-spacing: 0.05rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.24);;
+}
 
 main{
   padding-top: 5px ;
+}
+
+#footer{
+    background-color: var(--footer);
 }
