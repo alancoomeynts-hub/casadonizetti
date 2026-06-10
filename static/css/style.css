@@ -66,6 +66,13 @@ main{
   padding-top: 5px ;
 }
 
+.about{
+  font-family: var(--font-body);
+  font-size: 1.2rem;
+  line-height: 1.6;
+}
+
+
 #footer{
     background-color: var(--footer);
 }
