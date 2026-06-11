@@ -62,7 +62,7 @@
                         </li>
 
                         <li id="nav-cta" class="nav-item">
-                            <a href="" class=" cta-btn btn btn-lg ms-3">
+                            <a href="" class="cta-btn btn btn-lg ms-3">
                                 Reserve a Table
                             </a>
                         </li>
@@ -73,28 +73,27 @@
         </div>
     </nav>
 
-    <main>
+    <main class="flex-shrink-0">
         {% block content %}
         {% endblock content %}
     </main>
+
 <footer id="footer" class="mt-auto">
     <div class="container content-padding">
         <div class="row gap-4 justify-content-center">
-            <div class="col-12 text-center">
-                <h2 class="display-6 footer-headings">Contact Us</h2>
-            </div>
 
-            <div class="col-12 col-md-4">
-                <strong class="d-block mb-3 small text-uppercase">Quick Links</strong>
+            <div class="col-12 col-md-4 mt-4">
+                <h3 class=" footer-headings">Quick Links</h3>
                 <ul class="quick-links d-flex flex-column align-items-start">
-                    <li><a href="{% url 'homepage' %}">Home</a></li>
-                    <li><a href="">Menu</a></li>
-                    <li><a href="">Contact</a></li>
-                    <li><a href="">Reserve a Table</a></li>
+                    <li><a class="anchor" href="{% url 'homepage' %}" >Home</a></li>
+                    <li><a class="anchor" href="">Menu</a></li>
+                    <li><a  class="anchor" href="">Contact</a></li>
+                    <li><a class="anchor" href="">Reserve a Table</a></li>
                 </ul>
             </div>
 
-            <div class="col-12 col-md-4">
+            <div class="col-12 col-md-4 mt-4">
+                <h3 class="footer-headings">Contact Us</h3>
                 <address class="d-flex align-items-start">
                     <span class="flex-shrink-0"><i class="fa-solid fa-building-columns"></i></span>
                     <span>
@@ -113,11 +112,13 @@
                 </div>
             </div>
 
-            <div class="col-12 col-md-8 text-center social-links">
+            <div class="col-12 col-md-4 mt-4">
                 <h3 class="footer-headings">Find us on:</h3>
+                <div class="social-links d-flex gap-3 flex-wrap justify-content-start">
                 {% for link in social_links %}
                     <a href="{{ link.url }}" target="_blank" rel="noopener"><i class="{{ link.icon }}"></i></a>
                 {% endfor %}
+                </div>
             </div>
         </div>
     </div>
