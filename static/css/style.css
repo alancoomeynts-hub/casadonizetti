@@ -2,18 +2,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
 
 :root {
---navbar: #556B2F;
---main-bg: #F7F3EC;
---footer: #A85D43;
+ --navbar: #2F4A3A;
+  --main-bg: #F4EBDD;
+  --footer: #7A2E35;
 
---nav-link: #F7F3EC;
---nav-cta: #96472F;
+  --nav-link: #F4EBDD;
+  --nav-cta: #B08D57;
 
---heading-primary: #2F2A24;
---heading-secondary: #5B4A3F;
---text-main: black;
+  --heading-primary: #241A17;
+  --heading-secondary: #6B5647;
+  --text-main: #2B2621;
 
---footer-link: #FFF8F2;
+  --footer-link: #FFF4E8;
 
 
 --font-headings: 'Playfair Display', serif;
