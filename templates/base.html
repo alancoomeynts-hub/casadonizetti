@@ -79,48 +79,52 @@
     </main>
 
 <footer id="footer" class="mt-auto">
-    <div class="container content-padding">
-        <div class="row gap-4 justify-content-center">
+    <div class="container py-4">
+        <div class="row g-4 align-items-start">
 
-            <div class="col-12 col-md-4 mt-4">
-                <h3 class=" footer-headings">Quick Links</h3>
-                <ul class="quick-links d-flex flex-column align-items-start">
-                    <li><a class="anchor" href="{% url 'homepage' %}" >Home</a></li>
+            <div class="col-12 col-md-4 d-none d-md-block">
+                <h3 class="footer-headings">Quick Links</h3>
+                <ul class="quick-links list-unstyled mb-0">
+                    <li><a class="anchor" href="{% url 'homepage' %}">Home</a></li>
                     <li><a class="anchor" href="">Menu</a></li>
-                    <li><a  class="anchor" href="">Contact</a></li>
+                    <li><a class="anchor" href="">Contact</a></li>
                     <li><a class="anchor" href="">Reserve a Table</a></li>
                 </ul>
             </div>
 
-            <div class="col-12 col-md-4 mt-4">
-                <h3 class="footer-headings">Contact Us</h3>
-                <address class="d-flex align-items-start">
-                    <span class="flex-shrink-0"><i class="fa-solid fa-building-columns"></i></span>
-                    <span>
-                         {{ restaurant.address|safe}}
-                    </span>
+            <div class="col-12 col-md-4">
+                <h3 class="footer-headings">Contact</h3>
+                <address class="mb-0 footer-contact">
+                    <div class="d-flex align-items-start mb-2">
+                        <span class="flex-shrink-0 me-2"><i class="fa-solid fa-building-columns"></i></span>
+                        <span>{{ restaurant.address|safe }}</span>
+                    </div>
+
+                    <div class="d-flex align-items-start mb-2">
+                        <span class="flex-shrink-0 me-2"><i class="fa-solid fa-phone"></i></span>
+                        <span><a href="tel:{{ restaurant.phone }}" class="anchor">{{ restaurant.phone }}</a></span>
+                    </div>
+
+                    <div class="d-flex align-items-start">
+                        <span class="flex-shrink-0 me-2"><i class="fa-regular fa-paper-plane"></i></span>
+                        <span><a href="mailto:{{ restaurant.email }}?subject=Booking%20Enquiry" class="anchor">{{ restaurant.email }}</a></span>
+                    </div>
                 </address>
+            </div>
 
-                <div class="d-flex align-items-start mb-3">
-                    <span class="flex-shrink-0"><i class="fa-solid fa-phone"></i></span>
-                    <span><a href="{{ restaurant.phone}}" class="anchor">{{ restaurant.phone}}</a></span>
-                </div>
-
-                <div class="d-flex align-items-start">
-                    <span class="flex-shrink-0"><i class="fa-regular fa-paper-plane"></i></span>
-                    <span><a href="mailto:{{ restaurant.email}}?subject=Booking%20Enquiry" class="anchor">{{ restaurant.email}}</a></span>
+            <div class="col-12 col-md-4">
+                <h3 class="footer-headings d-none d-md-block">Follow us on</h3>
+                <div class="social-links d-flex gap-3 justify-content-start">
+                    {% for link in social_links %}
+                        <a href="{{ link.url }}" target="_blank" rel="noopener" aria-label="{{ link.platform }}">
+                            <i class="{{ link.icon }}"></i>
+                        </a>
+                    {% endfor %}
                 </div>
             </div>
 
-            <div class="col-12 col-md-4 mt-4">
-                <h3 class="footer-headings">Find us on:</h3>
-                <div class="social-links d-flex gap-3 flex-wrap justify-content-start">
-                {% for link in social_links %}
-                    <a href="{{ link.url }}" target="_blank" rel="noopener"><i class="{{ link.icon }}"></i></a>
-                {% endfor %}
-                </div>
-            </div>
         </div>
+
     </div>
 </footer>
 
