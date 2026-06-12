@@ -14,7 +14,7 @@
 </head>
 <body class="d-flex flex-column min-vh-100">
 
-    <nav id="navbar" class="navbar navbar-expand-md fixed-top">
+    <nav id="navbar" class="navbar navbar-expand-md fixed-top" aria-label="navbar">
         <div class="container-fluid">
 
             <a class="navbar-brand" href="{% url 'homepage' %}">
@@ -35,7 +35,7 @@
                  aria-labelledby="offcanvasDarkNavbarLabel">
 
                 <div class="offcanvas-header">
-                    <h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel">Menu</h5>
+                    <p class="offcanvas-title mb-0" id="offcanvasDarkNavbarLabel">Navigation</p>
                     <button type="button"
                             class="btn-close btn-close-white"
                             data-bs-dismiss="offcanvas"
@@ -62,7 +62,7 @@
                         </li>
 
                         <li id="nav-cta" class="nav-item">
-                            <a href="" class="cta-btn btn btn-lg ms-3">
+                            <a href="" class="cta-btn btn btn-lg ms-3 d-none d-md-block">
                                 Reserve a Table
                             </a>
                         </li>
@@ -73,18 +73,19 @@
         </div>
     </nav>
 
-    <main class="flex-shrink-0">
+    <main id="main" class="flex-shrink-0">
         {% block content %}
         {% endblock content %}
+
     </main>
 
 <footer id="footer" class="mt-auto">
-    <div class="container py-4">
-        <div class="row g-4 align-items-start">
+    <div class="container py-md-4 py-1">
+        <div class="row g-3 align-items-start ">
 
             <div class="col-12 col-md-4 d-none d-md-block">
-                <h3 class="footer-headings">Quick Links</h3>
-                <ul class="quick-links list-unstyled mb-0">
+                <p class="footer-headings mb-2">Quick Links</p>
+                <ul class="quick-links mb-0">
                     <li><a class="anchor" href="{% url 'homepage' %}">Home</a></li>
                     <li><a class="anchor" href="">Menu</a></li>
                     <li><a class="anchor" href="">Contact</a></li>
@@ -92,8 +93,8 @@
                 </ul>
             </div>
 
-            <div class="col-12 col-md-4">
-                <h3 class="footer-headings">Contact</h3>
+            <div class="col-12 col-md-4 d-none d-md-block">
+                <p class="footer-headings mb-2">Contact</p>
                 <address class="mb-0 footer-contact">
                     <div class="d-flex align-items-start mb-2">
                         <span class="flex-shrink-0 me-2"><i class="fa-solid fa-building-columns"></i></span>
@@ -113,8 +114,8 @@
             </div>
 
             <div class="col-12 col-md-4">
-                <h3 class="footer-headings d-none d-md-block">Follow us on</h3>
-                <div class="social-links d-flex gap-3 justify-content-start">
+                <p class="footer-headings mb-2 d-none d-md-block">Follow us on</p>
+                <div class="social-links d-flex gap-3 justify-content-between justify-content-md-start">
                     {% for link in social_links %}
                         <a href="{{ link.url }}" target="_blank" rel="noopener" aria-label="{{ link.platform }}">
                             <i class="{{ link.icon }}"></i>

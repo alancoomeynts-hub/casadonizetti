@@ -1,34 +1,36 @@
-
-@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap");
 
 :root {
- --navbar: #2F4A3A;
-  --main-bg: #F4EBDD;
-  --footer: #7A2E35;
+  --navbar: #2f4a3a;
+  --main-bg: #f4ebdd;
+  --footer: #7a2e35;
 
-  --nav-link: #F4EBDD;
-  --nav-cta: #B08D57;
+  --nav-link: #f4ebdd;
+  --nav-cta: #b08d57;
+  --nav-cta-hover: #9a7846;
 
-  --heading-primary: #241A17;
-  --heading-secondary: #6B5647;
-  --text-main: #2B2621;
+  --heading-primary: #241a17;
+  --heading-secondary: #6b5647;
+  --text-main: #2b2621;
 
-  --footer-link: #FFF4E8;
+  --footer-link: #fff4e8;
 
-
---font-headings: 'Playfair Display', serif;
---font-body:'Lato', sans-serif;
+  --font-headings: "Playfair Display", serif;
+  --font-body: "Lato", sans-serif;
 }
 
-body{
+body {
   background-color: var(--main-bg);
   color: var(--text-main);
   font-family: var(--font-body);
   padding-top: 56px;
 }
+h1, h2, h3, h4, h5, h6 {
+  color: var(--heading-primary);
+  font-family: var(--font-headings), serif;
 
+}
 /*Navigation Bar styles*/
-
 
 #navbar {
   background-color: var(--navbar) !important ;
@@ -37,30 +39,74 @@ body{
 #navbar .nav-link {
   font-family: var(--font-headings);
   color: var(--nav-link);
+  font-size: 1.2rem;
   font-weight: 500;
 }
-.navbar-brand img {
-    max-height: 50px;
-    width: 200px;
-    display: block;
+
+#navbar .nav-link:hover {
+  color: var(--nav-cta);
 }
 
-.cta-btn{
+.navbar-nav .nav-link.active {
+  text-decoration: underline;
+  text-decoration-thickness: 3px;
+}
+
+.navbar-brand img {
+  max-height: 50px;
+  width: 200px;
+  display: block;
+}
+/*navbar offcanvas styles*/
+.offcanvas-header{
+  background-color: var(--navbar);
+  font-family: var(--font-headings);
+  color: var(--nav-cta);
+  border-bottom: 2px solid var(--nav-cta);
+}
+
+.offcanvas-title{
+  font-family: var(--font-headings);
+  font-size: 1.5rem;
+  color: var(--nav-link);
+  font-weight: 800;
+  letter-spacing: 0.05rem;
+
+}
+
+.offcanvas-body{
+  background-color: var(--navbar);
+}
+
+
+/*Button styles*/
+.cta-btn {
   background-color: var(--nav-cta);
   font-family: var(--font-headings);
   font-size: 1.2rem;
-  color: var(--text-main);
+  color: var(--nav-link);
   border: 2px solid var(--nav-cta);
   font-weight: 500;
   letter-spacing: 0.05rem;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.24);;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.24);
+  transition: 0.2s ease;
+
 }
 
-main{
-  padding-top: 5px ;
+
+.cta-btn:hover {
+  background-color: var(--nav-cta-hover);
+  font-family: var(--font-headings);
+  font-size: 1.2rem;
+  font-weight: 500;
+  letter-spacing: 0.05rem;
+  transform: translateY(3px);
+}
+main {
+  padding-top: 5px;
 }
 
-.about{
+.about {
   font-family: var(--font-body);
   font-size: 1.2rem;
   line-height: 1.6;
@@ -68,32 +114,31 @@ main{
 
 /*footer styles*/
 
-#footer{
-    background-color: var(--footer);
-    color: var(--footer-link);
-    font-family: var(--font-body);
-    padding: 1.5rem 0 1rem;
+#footer {
+  background-color: var(--footer);
+  color: var(--footer-link);
+  font-family: var(--font-body);
+  padding: 1.5rem 0 1rem;
   font-size: 0.9rem;
-
 }
 
-.footer-headings{
+.footer-headings {
   color: var(--footer-link);
   font-family: var(--font-headings);
-  font-size: 1.1rem;
-  margin-bottom: 0.9rem ;
+  font-size: 1.5rem;
+  letter-spacing: 0.05rem;
+  margin-bottom: 0.9rem;
 }
 
-#footer i{
+#footer i {
   color: var(--footer-link);
   margin-right: 1rem;
   transition: transform 0.2s ease;
 }
 
-.anchor{
+.anchor {
   color: var(--footer-link);
   text-decoration: none;
-
 }
 
 .anchor:hover,
@@ -102,8 +147,7 @@ main{
   text-underline-offset: 0.2rem;
 }
 
-
-.quick-links{
+.quick-links {
   list-style: none;
   padding-left: 0;
   margin-bottom: 0;
@@ -120,3 +164,4 @@ main{
 .social-links a:focus i {
   transform: translateY(-2px);
 }
+
