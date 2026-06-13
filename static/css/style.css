@@ -44,7 +44,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 #navbar .nav-link:hover {
-  color: var(--nav-cta);
+  color: var(--nav-hover);
 }
 
 .navbar-nav .nav-link.active {
@@ -83,9 +83,9 @@ h1, h2, h3, h4, h5, h6 {
 .cta-btn {
   background-color: var(--nav-cta);
   font-family: var(--font-headings);
-  font-size: 1.2rem;
-  color: var(--nav-link);
-  border: 2px solid var(--nav-cta);
+  font-size: 1.4rem;
+  color: var(--nav-cta-link);
+  border: 3px solid var(--nav-link);
   font-weight: 500;
   letter-spacing: 0.05rem;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.24);
@@ -96,10 +96,8 @@ h1, h2, h3, h4, h5, h6 {
 
 .cta-btn:hover {
   background-color: var(--nav-cta-hover);
-  font-family: var(--font-headings);
-  font-size: 1.2rem;
-  font-weight: 500;
-  letter-spacing: 0.05rem;
+  border-color: var(--nav-link);
+  color: var(--nav-link);
   transform: translateY(3px);
 }
 main {
@@ -110,6 +108,22 @@ main {
   font-family: var(--font-body);
   font-size: 1.2rem;
   line-height: 1.6;
+}
+/* styles for cta on mobile screens*/
+#cta-banner{
+  position: fixed;
+  bottom: clamp(2rem, 8vh, 7rem);
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+  width: min(calc(100vw - 3rem),20rem);
+}
+#cta-banner .cta-btn {
+  border-color: var(--text-main);
+  color: var(--nav-link);
+  display: block;
+  width: 100%;
+  text-align: center;
 }
 
 /*footer styles*/

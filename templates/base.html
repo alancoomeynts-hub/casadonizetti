@@ -35,7 +35,9 @@
                  aria-labelledby="offcanvasDarkNavbarLabel">
 
                 <div class="offcanvas-header">
-                    <p class="offcanvas-title mb-0" id="offcanvasDarkNavbarLabel">Navigation</p>
+                    <p class="offcanvas-title mb-0" id="offcanvasDarkNavbarLabel">
+                        Navigation
+                    </p>
                     <button type="button"
                             class="btn-close btn-close-white"
                             data-bs-dismiss="offcanvas"
@@ -46,19 +48,27 @@
                     <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
 
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="">Home</a>
+                            <a class="nav-link active" aria-current="page" href="">
+                                Home
+                            </a>
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link" href="">Menu</a>
+                            <a class="nav-link" href="">
+                                Menu
+                            </a>
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link" href="">Contact Us</a>
+                            <a class="nav-link" href="">
+                               Contact Us
+                            </a>
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link" href="">Sign In</a>
+                            <a class="nav-link" href="">
+                                Sign In
+                            </a>
                         </li>
 
                         <li id="nav-cta" class="nav-item">
@@ -76,7 +86,11 @@
     <main id="main" class="flex-shrink-0">
         {% block content %}
         {% endblock content %}
-
+        <div id="cta-banner">
+            <a href="" class="cta-btn btn btn-lg d-md-none">
+                Reserve a Table
+            </a>
+        </div>
     </main>
 
 <footer id="footer" class="mt-auto">
