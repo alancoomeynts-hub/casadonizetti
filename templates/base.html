@@ -125,6 +125,12 @@
                         <span><a href="mailto:{{ restaurant.email }}?subject=Booking%20Enquiry" class="anchor">{{ restaurant.email }}</a></span>
                     </div>
                 </address>
+
+                <p class="footer-contact mt-3 mb-0">
+                    Open daily: {{ restaurant.open_at }} to {{ restaurant.closes_at }} <br>
+                    Closed on Christmas Day and St Stephen's Day.
+                </p>
+
             </div>
 
             <div class="col-12 col-md-4">
