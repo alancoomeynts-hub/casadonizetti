@@ -1,0 +1,1054 @@
+[
+  {
+    "model": "menu.menu",
+    "pk": 1,
+    "fields": {
+      "name": "Summer Menu",
+      "slug": "summer-menu",
+      "is_active": true
+    }
+  },
+  {
+    "model": "menu.menu",
+    "pk": 2,
+    "fields": {
+      "name": "Winter Menu",
+      "slug": "winter-menu",
+      "is_active": true
+    }
+  },
+  {
+    "model": "menu.menusection",
+    "pk": 3,
+    "fields": {
+      "menu": 1,
+      "name": "Starters",
+      "slug": "starters",
+      "sort_order": 0,
+      "is_active": true
+    }
+  },
+  {
+    "model": "menu.menusection",
+    "pk": 4,
+    "fields": {
+      "menu": 1,
+      "name": "Mains",
+      "slug": "mains",
+      "sort_order": 1,
+      "is_active": true
+    }
+  },
+  {
+    "model": "menu.menusection",
+    "pk": 5,
+    "fields": {
+      "menu": 1,
+      "name": "Sides",
+      "slug": "sides",
+      "sort_order": 2,
+      "is_active": true
+    }
+  },
+  {
+    "model": "menu.menusection",
+    "pk": 6,
+    "fields": {
+      "menu": 1,
+      "name": "Desserts",
+      "slug": "desserts",
+      "sort_order": 3,
+      "is_active": true
+    }
+  },
+  {
+    "model": "menu.menusection",
+    "pk": 7,
+    "fields": {
+      "menu": 1,
+      "name": "Drinks",
+      "slug": "drinks",
+      "sort_order": 4,
+      "is_active": true
+    }
+  },
+  {
+    "model": "menu.menusection",
+    "pk": 8,
+    "fields": {
+      "menu": 2,
+      "name": "Starters",
+      "slug": "starters",
+      "sort_order": 0,
+      "is_active": true
+    }
+  },
+  {
+    "model": "menu.menusection",
+    "pk": 9,
+    "fields": {
+      "menu": 2,
+      "name": "Mains",
+      "slug": "mains",
+      "sort_order": 1,
+      "is_active": true
+    }
+  },
+  {
+    "model": "menu.menusection",
+    "pk": 10,
+    "fields": {
+      "menu": 2,
+      "name": "Sides",
+      "slug": "sides",
+      "sort_order": 2,
+      "is_active": true
+    }
+  },
+  {
+    "model": "menu.menusection",
+    "pk": 11,
+    "fields": {
+      "menu": 2,
+      "name": "Desserts",
+      "slug": "desserts",
+      "sort_order": 3,
+      "is_active": true
+    }
+  },
+  {
+    "model": "menu.menusection",
+    "pk": 12,
+    "fields": {
+      "menu": 2,
+      "name": "Drinks",
+      "slug": "drinks",
+      "sort_order": 4,
+      "is_active": true
+    }
+  },
+  {
+    "model": "menu.menuitem",
+    "pk": 13,
+    "fields": {
+      "section": 3,
+      "name": "Burrata, Wexford Tomatoes & Basil Oil",
+      "description": "Irish summer tomatoes with burrata, basil oil and grilled sourdough.",
+      "price": "10.50",
+      "is_featured": false,
+      "sort_order": 0,
+      "featured_image": null,
+      "is_active": true
+    }
+  },
+  {
+    "model": "menu.menuitem",
+    "pk": 14,
+    "fields": {
+      "section": 3,
+      "name": "Arancini of Cashel Blue & Garden Peas",
+      "description": "Crisp risotto balls with Cashel Blue, peas and lemon aioli.",
+      "price": "9.50",
+      "is_featured": true,
+      "sort_order": 1,
+      "featured_image": null,
+      "is_active": true
+    }
+  },
+  {
+    "model": "menu.menuitem",
+    "pk": 15,
+    "fields": {
+      "section": 3,
+      "name": "West Cork Mussels alla Marinara",
+      "description": "Mussels in light tomato, garlic, white wine and parsley.",
+      "price": "11.50",
+      "is_featured": true,
+      "sort_order": 2,
+      "featured_image": null,
+      "is_active": true
+    }
+  },
+  {
+    "model": "menu.menuitem",
+    "pk": 16,
+    "fields": {
+      "section": 3,
+      "name": "Courgette Fritti with Parmesan",
+      "description": "Thin courgette ribbons, fried crisp and served with parmesan and lemon.",
+      "price": "8.50",
+      "is_featured": false,
+      "sort_order": 3,
+      "featured_image": null,
+      "is_active": true
+    }
+  },
+  {
+    "model": "menu.menuitem",
+    "pk": 17,
+    "fields": {
+      "section": 3,
+      "name": "Bruschetta with Broad Beans & Pecorino",
+      "description": "Charred bread topped with broad bean crush, pecorino and mint.",
+      "price": "8.00",
+      "is_featured": false,
+      "sort_order": 4,
+      "featured_image": null,
+      "is_active": true
+    }
+  },
+  {
+    "model": "menu.menuitem",
+    "pk": 18,
+    "fields": {
+      "section": 3,
+      "name": "Roasted Beetroot Carpaccio",
+      "description": "Irish beetroot with whipped ricotta, hazelnuts and aged balsamic.",
+      "price": "9.00",
+      "is_featured": false,
+      "sort_order": 5,
+      "featured_image": null,
+      "is_active": true
+    }
+  },
+  {
+    "model": "menu.menuitem",
+    "pk": 19,
+    "fields": {
+      "section": 3,
+      "name": "Aubergine Parmigiana, Small Plate",
+      "description": "Layers of aubergine, tomato and mozzarella baked until bubbling.",
+      "price": "10.00",
+      "is_featured": false,
+      "sort_order": 6,
+      "featured_image": null,
+      "is_active": true
+    }
+  },
+  {
+    "model": "menu.menuitem",
+    "pk": 20,
+    "fields": {
+      "section": 4,
+      "name": "Tagliatelle with Irish Crab, Chilli & Lemon",
+      "description": "Fresh pasta with hand-picked Irish crab, lemon zest and parsley.",
+      "price": "21.00",
+      "is_featured": true,
+      "sort_order": 0,
+      "featured_image": null,
+      "is_active": true
+    }
+  },
+  {
+    "model": "menu.menuitem",
+    "pk": 21,
+    "fields": {
+      "section": 4,
+      "name": "Potato Gnocchi with Courgette & Mint",
+      "description": "Soft gnocchi with courgette, peas, mint and brown butter.",
+      "price": "18.50",
+      "is_featured": false,
+      "sort_order": 1,
+      "featured_image": null,
+      "is_active": true
+    }
+  },
+  {
+    "model": "menu.menuitem",
+    "pk": 22,
+    "fields": {
+      "section": 4,
+      "name": "Hake Acqua Pazza",
+      "description": "Pan-roast Irish hake with cherry tomatoes, capers and white wine broth.",
+      "price": "24.00",
+      "is_featured": true,
+      "sort_order": 2,
+      "featured_image": null,
+      "is_active": true
+    }
+  },
+  {
+    "model": "menu.menuitem",
+    "pk": 23,
+    "fields": {
+      "section": 4,
+      "name": "Chicken Milanese with Rocket & Parmesan",
+      "description": "Crisp chicken cutlet with peppery leaves and shaved parmesan.",
+      "price": "20.50",
+      "is_featured": false,
+      "sort_order": 3,
+      "featured_image": null,
+      "is_active": true
+    }
+  },
+  {
+    "model": "menu.menuitem",
+    "pk": 24,
+    "fields": {
+      "section": 4,
+      "name": "Summer Vegetable Risotto",
+      "description": "Risotto with asparagus, peas, broad beans and parmesan.",
+      "price": "19.50",
+      "is_featured": false,
+      "sort_order": 4,
+      "featured_image": null,
+      "is_active": true
+    }
+  },
+  {
+    "model": "menu.menuitem",
+    "pk": 25,
+    "fields": {
+      "section": 4,
+      "name": "Irish Beef Ragu Pappardelle",
+      "description": "Slow cooked Irish beef in tomato and red wine over pappardelle.",
+      "price": "22.00",
+      "is_featured": true,
+      "sort_order": 5,
+      "featured_image": null,
+      "is_active": true
+    }
+  },
+  {
+    "model": "menu.menuitem",
+    "pk": 26,
+    "fields": {
+      "section": 4,
+      "name": "Grilled Pork Coppa with Salsa Verde",
+      "description": "Irish pork with borlotti beans, salsa verde and roasted peppers.",
+      "price": "23.50",
+      "is_featured": false,
+      "sort_order": 6,
+      "featured_image": null,
+      "is_active": true
+    }
+  },
+  {
+    "model": "menu.menuitem",
+    "pk": 27,
+    "fields": {
+      "section": 5,
+      "name": "Rosemary Roasted New Potatoes",
+      "description": "Irish new potatoes roasted with rosemary and sea salt.",
+      "price": "5.50",
+      "is_featured": false,
+      "sort_order": 0,
+      "featured_image": null,
+      "is_active": true
+    }
+  },
+  {
+    "model": "menu.menuitem",
+    "pk": 28,
+    "fields": {
+      "section": 5,
+      "name": "Rocket, Parmesan & Lemon Salad",
+      "description": "Peppery leaves with parmesan and lemon dressing.",
+      "price": "5.50",
+      "is_featured": false,
+      "sort_order": 1,
+      "featured_image": null,
+      "is_active": true
+    }
+  },
+  {
+    "model": "menu.menuitem",
+    "pk": 29,
+    "fields": {
+      "section": 5,
+      "name": "Charred Tenderstem Broccoli",
+      "description": "Broccoli with chilli, garlic and pangrattato.",
+      "price": "6.00",
+      "is_featured": false,
+      "sort_order": 2,
+      "featured_image": null,
+      "is_active": true
+    }
+  },
+  {
+    "model": "menu.menuitem",
+    "pk": 30,
+    "fields": {
+      "section": 5,
+      "name": "Courgette & Mint Salad",
+      "description": "Shaved courgette, mint and pecorino.",
+      "price": "5.50",
+      "is_featured": false,
+      "sort_order": 3,
+      "featured_image": null,
+      "is_active": true
+    }
+  },
+  {
+    "model": "menu.menuitem",
+    "pk": 31,
+    "fields": {
+      "section": 5,
+      "name": "Polenta Fries with Truffle Mayo",
+      "description": "Crisp polenta chips with truffle mayonnaise.",
+      "price": "6.50",
+      "is_featured": false,
+      "sort_order": 4,
+      "featured_image": null,
+      "is_active": true
+    }
+  },
+  {
+    "model": "menu.menuitem",
+    "pk": 32,
+    "fields": {
+      "section": 5,
+      "name": "Braised Cannellini Beans",
+      "description": "Cannellini beans with sage, olive oil and tomato.",
+      "price": "5.50",
+      "is_featured": false,
+      "sort_order": 5,
+      "featured_image": null,
+      "is_active": true
+    }
+  },
+  {
+    "model": "menu.menuitem",
+    "pk": 33,
+    "fields": {
+      "section": 6,
+      "name": "Strawberry Tiramisu",
+      "description": "A summer tiramisu with Irish strawberries and mascarpone.",
+      "price": "8.50",
+      "is_featured": true,
+      "sort_order": 0,
+      "featured_image": null,
+      "is_active": true
+    }
+  },
+  {
+    "model": "menu.menuitem",
+    "pk": 34,
+    "fields": {
+      "section": 6,
+      "name": "Lemon Panna Cotta",
+      "description": "Silky panna cotta with lemon and shortbread crumb.",
+      "price": "8.00",
+      "is_featured": false,
+      "sort_order": 1,
+      "featured_image": null,
+      "is_active": true
+    }
+  },
+  {
+    "model": "menu.menuitem",
+    "pk": 35,
+    "fields": {
+      "section": 6,
+      "name": "Affogato al Caffè",
+      "description": "Vanilla gelato with hot espresso.",
+      "price": "6.50",
+      "is_featured": false,
+      "sort_order": 2,
+      "featured_image": null,
+      "is_active": true
+    }
+  },
+  {
+    "model": "menu.menuitem",
+    "pk": 36,
+    "fields": {
+      "section": 6,
+      "name": "Raspberry & Almond Crostata",
+      "description": "Buttery tart with Irish raspberries and almond cream.",
+      "price": "8.50",
+      "is_featured": false,
+      "sort_order": 3,
+      "featured_image": null,
+      "is_active": true
+    }
+  },
+  {
+    "model": "menu.menuitem",
+    "pk": 37,
+    "fields": {
+      "section": 6,
+      "name": "Honey Semifreddo",
+      "description": "Frozen honey parfait with toasted hazelnuts.",
+      "price": "8.00",
+      "is_featured": false,
+      "sort_order": 4,
+      "featured_image": null,
+      "is_active": true
+    }
+  },
+  {
+    "model": "menu.menuitem",
+    "pk": 38,
+    "fields": {
+      "section": 6,
+      "name": "Gelato Trio",
+      "description": "Three scoops of seasonal gelato or sorbet.",
+      "price": "7.50",
+      "is_featured": false,
+      "sort_order": 5,
+      "featured_image": null,
+      "is_active": true
+    }
+  },
+  {
+    "model": "menu.menuitem",
+    "pk": 39,
+    "fields": {
+      "section": 7,
+      "name": "Aperol Spritz",
+      "description": "Aperol, prosecco and soda over ice.",
+      "price": "11.00",
+      "is_featured": true,
+      "sort_order": 0,
+      "featured_image": null,
+      "is_active": true
+    }
+  },
+  {
+    "model": "menu.menuitem",
+    "pk": 40,
+    "fields": {
+      "section": 7,
+      "name": "Negroni",
+      "description": "Gin, Campari and sweet vermouth.",
+      "price": "12.00",
+      "is_featured": false,
+      "sort_order": 1,
+      "featured_image": null,
+      "is_active": true
+    }
+  },
+  {
+    "model": "menu.menuitem",
+    "pk": 41,
+    "fields": {
+      "section": 7,
+      "name": "Sgroppino",
+      "description": "Vodka, prosecco and lemon sorbet.",
+      "price": "11.50",
+      "is_featured": false,
+      "sort_order": 2,
+      "featured_image": null,
+      "is_active": true
+    }
+  },
+  {
+    "model": "menu.menuitem",
+    "pk": 42,
+    "fields": {
+      "section": 7,
+      "name": "Elderflower & Lemon Spritz",
+      "description": "Elderflower, lemon and soda with a dry Italian style.",
+      "price": "7.00",
+      "is_featured": false,
+      "sort_order": 3,
+      "featured_image": null,
+      "is_active": true
+    }
+  },
+  {
+    "model": "menu.menuitem",
+    "pk": 43,
+    "fields": {
+      "section": 7,
+      "name": "Crodino & Orange",
+      "description": "Classic non-alcoholic Italian aperitivo over ice.",
+      "price": "6.50",
+      "is_featured": false,
+      "sort_order": 4,
+      "featured_image": null,
+      "is_active": true
+    }
+  },
+  {
+    "model": "menu.menuitem",
+    "pk": 44,
+    "fields": {
+      "section": 7,
+      "name": "Still / Sparkling Water",
+      "description": "Acqua Panna or San Pellegrino.",
+      "price": "4.50",
+      "is_featured": false,
+      "sort_order": 5,
+      "featured_image": null,
+      "is_active": true
+    }
+  },
+  {
+    "model": "menu.menuitem",
+    "pk": 45,
+    "fields": {
+      "section": 7,
+      "name": "Espresso / Macchiato / Cappuccino",
+      "description": "Italian coffee service.",
+      "price": "3.50",
+      "is_featured": false,
+      "sort_order": 6,
+      "featured_image": null,
+      "is_active": true
+    }
+  },
+  {
+    "model": "menu.menuitem",
+    "pk": 46,
+    "fields": {
+      "section": 8,
+      "name": "Tuscan Bean Soup",
+      "description": "Cannellini bean soup with rosemary oil and grilled bread.",
+      "price": "8.50",
+      "is_featured": false,
+      "sort_order": 0,
+      "featured_image": null,
+      "is_active": true
+    }
+  },
+  {
+    "model": "menu.menuitem",
+    "pk": 47,
+    "fields": {
+      "section": 8,
+      "name": "Arancini of Irish Beef Shin",
+      "description": "Crisp risotto balls filled with slow braised Irish beef and mozzarella.",
+      "price": "10.50",
+      "is_featured": true,
+      "sort_order": 1,
+      "featured_image": null,
+      "is_active": true
+    }
+  },
+  {
+    "model": "menu.menuitem",
+    "pk": 48,
+    "fields": {
+      "section": 8,
+      "name": "Roasted Celeriac with Gorgonzola",
+      "description": "Warm celeriac with gorgonzola, walnuts and honey.",
+      "price": "9.50",
+      "is_featured": false,
+      "sort_order": 2,
+      "featured_image": null,
+      "is_active": true
+    }
+  },
+  {
+    "model": "menu.menuitem",
+    "pk": 49,
+    "fields": {
+      "section": 8,
+      "name": "Brussels Sprouts Fritti",
+      "description": "Crisp sprouts with chilli, pecorino and lemon.",
+      "price": "8.50",
+      "is_featured": false,
+      "sort_order": 3,
+      "featured_image": null,
+      "is_active": true
+    }
+  },
+  {
+    "model": "menu.menuitem",
+    "pk": 50,
+    "fields": {
+      "section": 8,
+      "name": "Baked Fig & Cashel Blue Crostini",
+      "description": "Toasted sourdough with baked fig, Cashel Blue and thyme honey.",
+      "price": "9.00",
+      "is_featured": false,
+      "sort_order": 4,
+      "featured_image": null,
+      "is_active": true
+    }
+  },
+  {
+    "model": "menu.menuitem",
+    "pk": 51,
+    "fields": {
+      "section": 8,
+      "name": "Woodland Mushroom Bruschetta",
+      "description": "Garlicky Irish mushrooms on toast with parsley and mascarpone.",
+      "price": "9.50",
+      "is_featured": true,
+      "sort_order": 5,
+      "featured_image": null,
+      "is_active": true
+    }
+  },
+  {
+    "model": "menu.menuitem",
+    "pk": 52,
+    "fields": {
+      "section": 8,
+      "name": "Warm Beetroot & Radicchio Salad",
+      "description": "Roast beetroot, bitter leaves and whipped ricotta.",
+      "price": "8.50",
+      "is_featured": false,
+      "sort_order": 6,
+      "featured_image": null,
+      "is_active": true
+    }
+  },
+  {
+    "model": "menu.menuitem",
+    "pk": 53,
+    "fields": {
+      "section": 9,
+      "name": "Pappardelle with Wild Boar Style Irish Pork Ragu",
+      "description": "Rich tomato ragu inspired by cinghiale, made with Irish pork.",
+      "price": "22.50",
+      "is_featured": true,
+      "sort_order": 0,
+      "featured_image": null,
+      "is_active": true
+    }
+  },
+  {
+    "model": "menu.menuitem",
+    "pk": 54,
+    "fields": {
+      "section": 9,
+      "name": "Pumpkin & Sage Risotto",
+      "description": "Creamy risotto with roast pumpkin, sage butter and parmesan.",
+      "price": "19.50",
+      "is_featured": false,
+      "sort_order": 1,
+      "featured_image": null,
+      "is_active": true
+    }
+  },
+  {
+    "model": "menu.menuitem",
+    "pk": 55,
+    "fields": {
+      "section": 9,
+      "name": "Braised Irish Beef Cheek Polenta",
+      "description": "Slow braised beef cheek over soft parmesan polenta.",
+      "price": "24.50",
+      "is_featured": true,
+      "sort_order": 2,
+      "featured_image": null,
+      "is_active": true
+    }
+  },
+  {
+    "model": "menu.menuitem",
+    "pk": 56,
+    "fields": {
+      "section": 9,
+      "name": "Cavolo Nero & Sausage Orecchiette",
+      "description": "Pasta with Italian sausage, cavolo nero and chilli.",
+      "price": "20.50",
+      "is_featured": false,
+      "sort_order": 3,
+      "featured_image": null,
+      "is_active": true
+    }
+  },
+  {
+    "model": "menu.menuitem",
+    "pk": 57,
+    "fields": {
+      "section": 9,
+      "name": "Baked Hake with Leeks & White Beans",
+      "description": "Irish hake with braised leeks, white beans and herb crumbs.",
+      "price": "23.00",
+      "is_featured": false,
+      "sort_order": 4,
+      "featured_image": null,
+      "is_active": true
+    }
+  },
+  {
+    "model": "menu.menuitem",
+    "pk": 58,
+    "fields": {
+      "section": 9,
+      "name": "Potato Gnocchi al Forno",
+      "description": "Baked gnocchi with tomato, mozzarella and winter greens.",
+      "price": "18.50",
+      "is_featured": false,
+      "sort_order": 5,
+      "featured_image": null,
+      "is_active": true
+    }
+  },
+  {
+    "model": "menu.menuitem",
+    "pk": 59,
+    "fields": {
+      "section": 9,
+      "name": "Chicken Cacciatore",
+      "description": "Braised chicken with tomatoes, olives, herbs and roast root vegetables.",
+      "price": "21.50",
+      "is_featured": false,
+      "sort_order": 6,
+      "featured_image": null,
+      "is_active": true
+    }
+  },
+  {
+    "model": "menu.menuitem",
+    "pk": 60,
+    "fields": {
+      "section": 10,
+      "name": "Parmesan Polenta",
+      "description": "Soft polenta enriched with butter and parmesan.",
+      "price": "5.50",
+      "is_featured": false,
+      "sort_order": 0,
+      "featured_image": null,
+      "is_active": true
+    }
+  },
+  {
+    "model": "menu.menuitem",
+    "pk": 61,
+    "fields": {
+      "section": 10,
+      "name": "Roast Roots with Thyme",
+      "description": "Carrot, parsnip and beetroot roasted with thyme.",
+      "price": "6.00",
+      "is_featured": false,
+      "sort_order": 1,
+      "featured_image": null,
+      "is_active": true
+    }
+  },
+  {
+    "model": "menu.menuitem",
+    "pk": 62,
+    "fields": {
+      "section": 10,
+      "name": "Garlic Cavolo Nero",
+      "description": "Winter greens sautéed with garlic and olive oil.",
+      "price": "5.50",
+      "is_featured": false,
+      "sort_order": 2,
+      "featured_image": null,
+      "is_active": true
+    }
+  },
+  {
+    "model": "menu.menuitem",
+    "pk": 63,
+    "fields": {
+      "section": 10,
+      "name": "Rosemary Potatoes",
+      "description": "Roast potatoes with rosemary and sea salt.",
+      "price": "5.50",
+      "is_featured": false,
+      "sort_order": 3,
+      "featured_image": null,
+      "is_active": true
+    }
+  },
+  {
+    "model": "menu.menuitem",
+    "pk": 64,
+    "fields": {
+      "section": 10,
+      "name": "Braised Leeks",
+      "description": "Leeks braised gently with white wine and butter.",
+      "price": "6.00",
+      "is_featured": false,
+      "sort_order": 4,
+      "featured_image": null,
+      "is_active": true
+    }
+  },
+  {
+    "model": "menu.menuitem",
+    "pk": 65,
+    "fields": {
+      "section": 10,
+      "name": "Winter Leaf Salad",
+      "description": "Radicchio, rocket and shaved fennel with lemon dressing.",
+      "price": "5.50",
+      "is_featured": false,
+      "sort_order": 5,
+      "featured_image": null,
+      "is_active": true
+    }
+  },
+  {
+    "model": "menu.menuitem",
+    "pk": 66,
+    "fields": {
+      "section": 11,
+      "name": "Tiramisu",
+      "description": "Classic tiramisu with espresso, mascarpone and cocoa.",
+      "price": "8.50",
+      "is_featured": true,
+      "sort_order": 0,
+      "featured_image": null,
+      "is_active": true
+    }
+  },
+  {
+    "model": "menu.menuitem",
+    "pk": 67,
+    "fields": {
+      "section": 11,
+      "name": "Pear & Amaretto Tart",
+      "description": "Warm pear tart with amaretto cream.",
+      "price": "8.50",
+      "is_featured": false,
+      "sort_order": 1,
+      "featured_image": null,
+      "is_active": true
+    }
+  },
+  {
+    "model": "menu.menuitem",
+    "pk": 68,
+    "fields": {
+      "section": 11,
+      "name": "Panna Cotta with Blood Orange",
+      "description": "Vanilla panna cotta with winter citrus.",
+      "price": "8.00",
+      "is_featured": false,
+      "sort_order": 2,
+      "featured_image": null,
+      "is_active": true
+    }
+  },
+  {
+    "model": "menu.menuitem",
+    "pk": 69,
+    "fields": {
+      "section": 11,
+      "name": "Chocolate Budino",
+      "description": "Dark chocolate pudding with sea salt and cream.",
+      "price": "8.50",
+      "is_featured": true,
+      "sort_order": 3,
+      "featured_image": null,
+      "is_active": true
+    }
+  },
+  {
+    "model": "menu.menuitem",
+    "pk": 70,
+    "fields": {
+      "section": 11,
+      "name": "Affogato al Caffè",
+      "description": "Vanilla gelato with hot espresso.",
+      "price": "6.50",
+      "is_featured": false,
+      "sort_order": 4,
+      "featured_image": null,
+      "is_active": true
+    }
+  },
+  {
+    "model": "menu.menuitem",
+    "pk": 71,
+    "fields": {
+      "section": 11,
+      "name": "Hazelnut Semifreddo",
+      "description": "Frozen hazelnut parfait with chocolate sauce.",
+      "price": "8.00",
+      "is_featured": false,
+      "sort_order": 5,
+      "featured_image": null,
+      "is_active": true
+    }
+  },
+  {
+    "model": "menu.menuitem",
+    "pk": 72,
+    "fields": {
+      "section": 12,
+      "name": "Negroni",
+      "description": "Gin, Campari and sweet vermouth.",
+      "price": "12.00",
+      "is_featured": true,
+      "sort_order": 0,
+      "featured_image": null,
+      "is_active": true
+    }
+  },
+  {
+    "model": "menu.menuitem",
+    "pk": 73,
+    "fields": {
+      "section": 12,
+      "name": "Americano",
+      "description": "Campari, sweet vermouth and soda.",
+      "price": "10.50",
+      "is_featured": false,
+      "sort_order": 1,
+      "featured_image": null,
+      "is_active": true
+    }
+  },
+  {
+    "model": "menu.menuitem",
+    "pk": 74,
+    "fields": {
+      "section": 12,
+      "name": "Garibaldi",
+      "description": "Campari with fresh orange juice.",
+      "price": "10.50",
+      "is_featured": false,
+      "sort_order": 2,
+      "featured_image": null,
+      "is_active": true
+    }
+  },
+  {
+    "model": "menu.menuitem",
+    "pk": 75,
+    "fields": {
+      "section": 12,
+      "name": "Mulled Italian Red",
+      "description": "Warm spiced red wine with orange and clove.",
+      "price": "9.00",
+      "is_featured": false,
+      "sort_order": 3,
+      "featured_image": null,
+      "is_active": true
+    }
+  },
+  {
+    "model": "menu.menuitem",
+    "pk": 76,
+    "fields": {
+      "section": 12,
+      "name": "Amaro Flight",
+      "description": "A small tasting of seasonal Italian amari.",
+      "price": "12.50",
+      "is_featured": false,
+      "sort_order": 4,
+      "featured_image": null,
+      "is_active": true
+    }
+  },
+  {
+    "model": "menu.menuitem",
+    "pk": 77,
+    "fields": {
+      "section": 12,
+      "name": "Hot Chocolate Italiano",
+      "description": "Dark Italian style hot chocolate.",
+      "price": "5.50",
+      "is_featured": false,
+      "sort_order": 5,
+      "featured_image": null,
+      "is_active": true
+    }
+  },
+  {
+    "model": "menu.menuitem",
+    "pk": 78,
+    "fields": {
+      "section": 12,
+      "name": "Espresso / Macchiato / Cappuccino",
+      "description": "Italian coffee service.",
+      "price": "3.50",
+      "is_featured": false,
+      "sort_order": 6,
+      "featured_image": null,
+      "is_active": true
+    }
+  }
+]

@@ -1,6 +1,8 @@
-from django.shortcuts import render
-from django.http import HttpResponse
+from django.shortcuts import get_object_or_404, render
+from .models import Menu, MenuSection, MenuItem
 # Create your views here.
 def menu_view(request):
-    return HttpResponse("Hello, World!")
+    menu=get_object_or_404(Menu, is_active=True)
+    return render(request,'menu/menu.html',{'menu':menu})
+
 

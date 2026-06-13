@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block content %}
+<h1> Our {{ menu.name }}</h1>
+
+{% for section in menu.sections.all %}
+  <h2>{{ section.name }}</h2>
+
+  {% for item in section.items.all %}
+    <div>
+      {{ item.name }} - {{ item.price }}
+    </div>
+  {% endfor %}
+{% endfor %}
+{% endblock %}
