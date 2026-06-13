@@ -84,8 +84,8 @@ h1, h2, h3, h4, h5, h6 {
   background-color: var(--nav-cta);
   font-family: var(--font-headings);
   font-size: 1.4rem;
-  color: var(--nav-cta-link);
-  border: 3px solid var(--nav-link);
+  color: var(--nav-link);
+  border: 3px solid #000000;
   font-weight: 500;
   letter-spacing: 0.05rem;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.24);

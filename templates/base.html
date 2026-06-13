@@ -17,7 +17,7 @@
     <nav id="navbar" class="navbar navbar-expand-md fixed-top" aria-label="navbar">
         <div class="container-fluid">
 
-            <a class="navbar-brand" href="{% url 'homepage' %}">
+            <a class="navbar-brand" href="{{home_url}}">
                 <img src="{% static 'images/logo.webp' %}" alt="Casa Donizetti Logo">
             </a>
 
@@ -48,7 +48,7 @@
                     <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
 
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="">
+                            <a class="nav-link active" aria-current="page" href="{{home_url}}">
                                 Home
                             </a>
                         </li>
@@ -100,7 +100,7 @@
             <div class="col-12 col-md-4 d-none d-md-block">
                 <p class="footer-headings mb-2">Quick Links</p>
                 <ul class="quick-links mb-0">
-                    <li><a class="anchor" href="{% url 'homepage' %}">Home</a></li>
+                    <li><a class="anchor" href="{{home_url}}">Home</a></li>
                     <li><a class="anchor" href="">Menu</a></li>
                     <li><a class="anchor" href="">Contact</a></li>
                     <li><a class="anchor" href="">Reserve a Table</a></li>
