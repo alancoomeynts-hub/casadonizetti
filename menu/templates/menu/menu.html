@@ -5,7 +5,7 @@
 <div class="container mt-4 text-center">
 <h1>Our {{ menu.name }}</h1>
 
-<nav class="menu-nav text-center py-4 my-2">
+<nav class="menu-nav d-flex flex-wrap justify-content-center gap-2 py-4 my-2">
   {% for section in menu.sections.all %}
     <a href="#{{ section.slug }}" class="text-center me-2 mb-2 py-2 px-3">{{ section.name }} </a>
   {% endfor %}
