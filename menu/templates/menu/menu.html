@@ -1,6 +1,7 @@
 {% extends "base.html" %}
 
 {% block content %}
+
 <div class="container mt-4 text-center">
 <h1>Our {{ menu.name }}</h1>
 
@@ -9,6 +10,20 @@
     <a href="#{{ section.slug }}" class="text-center me-2 mb-2 py-2 px-3">{{ section.name }} </a>
   {% endfor %}
 </nav>
+<section class="featured py-4">
+    <div class="row g-3">
+        {% for item in featured_items %}
+        <div class="col-12 col-md-4">
+            <div class="card h-100">
+                <img src="{{ item.featured_image.url }}" alt="image of {{ item.name }}" class="card-img-top">
+                <div class="card-body">
+                    <h5 class="card-title">{{ item.name }}</h5>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</section>
 
 {% for section in menu.sections.all %}
   <section id="{{ section.slug }}" class="menu-section m-3 py-4 text-center">
@@ -26,4 +41,5 @@
   </section>
 {% endfor %}
 </div>
+
 {% endblock %}
