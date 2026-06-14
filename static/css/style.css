@@ -179,3 +179,21 @@ main {
   transform: translateY(-2px);
 }
 
+/* menu.html styles*/
+
+.menu-section:not(:last-child){
+  border-bottom: 1px solid var(--heading-primary);
+}
+
+.menu-nav a{
+  background-color: var(--nav-cta);
+  border-radius: 1rem;
+  text-decoration: none;
+  color: var(--nav-link);
+}
+
+.menu-nav a:hover{
+  background-color: var(--nav-link);
+  border: 2px solid var(--nav-cta-hover);
+  color: var(--nav-cta-hover);
+}
