@@ -197,3 +197,17 @@ main {
   border: 2px solid var(--nav-cta-hover);
   color: var(--nav-cta-hover);
 }
+/* featured dishes card styles*/
+.card{
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  border-radius: 1rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+
+}
+
+.card .card-img-top{
+  border-radius: 1rem;
+  width: 100%;
+  height: auto;
+
+}
