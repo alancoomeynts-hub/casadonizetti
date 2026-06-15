@@ -1,7 +1,10 @@
 {% extends "base.html" %}
+    {% load static %}
+{% url 'menu' as menu_url %}
 
 {% block content %}
-<section class="container mt-4">
+
+<section class="container my-5">
     <div class="row">
         <div class="col-lg-8 mx-auto">
             {% if restaurant %}
@@ -15,4 +18,38 @@
         </div>
     </div>
 </section>
+
+ <section class="section-bg mb-3">
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12 col-md-6">
+                <img src="{% static 'images/homepage-dish.webp' %}" alt="Image of Grilled Pork Coppa with Salsa Verde" class="d-block home-img">
+        </div>
+
+        <div class="col-12 col-md-6 d-flex flex-column justify-content-center align-items-center text-center gap-5">
+                <h2>Menu</h2>
+                <p class="lead">Our menu showcases Italian recipes with Ireland seasonality</p>
+                <a href="{{menu_url}}" class="cta-btn btn"> View Menu</a>
+        </div>
+    </div>
+</div>
+</section>
+
+ <section class="section-bg mb-3">
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12 col-md-6">
+                <img src="{% static 'images/dining-room.webp' %}" alt="Image of Grilled Pork Coppa with Salsa Verde" class=" d-block home-img">
+        </div>
+
+        <div class="col-12 col-md-6 d-flex flex-column justify-content-center align-items-center text-center gap-5">
+                <h2>Private Dining</h2>
+                <p class="lead">With an award-winning chef team and unparalleled wine list and beverage program,
+                    Casa Donizetti is the perfect setting to host your next celebration.</p>
+                <a href="" class="cta-btn btn"> Contact Us</a>
+        </div>
+    </div>
+</div>
+</section>
+
 {% endblock content %}
