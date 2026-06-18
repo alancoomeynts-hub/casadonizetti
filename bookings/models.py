@@ -18,6 +18,7 @@ class Reservation(models.Model):
     contact_email = models.EmailField()
     party_size = models.PositiveIntegerField()
     reservation_for = models.DateTimeField()
+    created_on = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
-        return f"{self.contact_name} - {self.reservation_date}"
+        return f"{self.contact_name} - {self.reservation_for}"
