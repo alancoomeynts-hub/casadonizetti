@@ -16,6 +16,7 @@ class Reservation(models.Model):
 
     contact_name = models.CharField(max_length=200)
     contact_email = models.EmailField()
+    contact_phone = models.CharField(max_length=20)
     party_size = models.PositiveIntegerField()
     reservation_for = models.DateTimeField()
     created_on = models.DateTimeField(auto_now_add=True)
