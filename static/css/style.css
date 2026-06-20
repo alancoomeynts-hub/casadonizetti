@@ -179,7 +179,7 @@ main {
 .social-links a:focus i {
   transform: translateY(-2px);
 }
-/*homepage styles */
+/* general main styles */
 
 .home-img{
   width: 100%;
@@ -191,7 +191,7 @@ main {
   background-color: var(--section-bg);
   color: var(--main-bg);
 }
-.section-bg h2{
+.section-bg h1,h2,p{
   color: var(--main-bg);
 }
 .section-bg .cta-btn{
@@ -205,6 +205,12 @@ main {
   color: var(--section-bg);
   border: 1px solid var(--section-bg);
 }
+/* reserve.html styles*/
+#reserve-form{
+  border-radius: 1rem;
+}
+
+
 /* menu.html styles*/
 
 .menu-section:not(:last-child){
