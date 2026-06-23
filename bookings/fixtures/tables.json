@@ -1,0 +1,56 @@
+[
+  {
+    "model": "bookings.table",
+    "pk": 1,
+    "fields": {
+      "name": "Table 1",
+      "capacity": 2,
+      "is_available": true
+    }
+  },
+  {
+    "model": "bookings.table",
+    "pk": 2,
+    "fields": {
+      "name": "Table 2",
+      "capacity": 2,
+      "is_available": true
+    }
+  },
+  {
+    "model": "bookings.table",
+    "pk": 3,
+    "fields": {
+      "name": "Table 3",
+      "capacity": 4,
+      "is_available": true
+    }
+  },
+  {
+    "model": "bookings.table",
+    "pk": 4,
+    "fields": {
+      "name": "Table 4",
+      "capacity": 4,
+      "is_available": true
+    }
+  },
+  {
+    "model": "bookings.table",
+    "pk": 5,
+    "fields": {
+      "name": "Table 5",
+      "capacity": 6,
+      "is_available": true
+    }
+  },
+  {
+    "model": "bookings.table",
+    "pk": 6,
+    "fields": {
+      "name": "Table 6",
+      "capacity": 8,
+      "is_available": true
+    }
+  }
+]

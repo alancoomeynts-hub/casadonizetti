@@ -7,7 +7,7 @@ class ReservationForm(forms.ModelForm):
 
     TIME_CHOICES=[]
 
-    for i in range(12, 23, 1):
+    for i in range(16, 23, 1):
         for j in range(0, 60, 15):
             TIME_CHOICES.append((f"{i}:{j:02d}", f"{i}:{j:02d}"))
 
