@@ -84,7 +84,7 @@
                         {% endif %}
                         <li id="nav-cta" class="nav-item">
                             <a href="{{ reserve_url }}"  class="cta-btn btn btn-lg ms-3 d-none d-md-block
-{% if request.path == reserve_url_url %}active{% endif %}">
+{% if request.path == reserve_url %}active{% endif %}">
                                 Reserve a Table
                             </a>
                         </li>
@@ -115,7 +115,7 @@
                     <li><a class="anchor" href="{{home_url}}">Home</a></li>
                     <li><a class="anchor" href="{{ menu_url }}">Menu</a></li>
                     <li><a class="anchor" href="">Contact</a></li>
-                    <li><a class="anchor" href="{{ reserve_url}}Set">Reserve a Table</a></li>
+                    <li><a class="anchor" href="{{ reserve_url}}">Reserve a Table</a></li>
                 </ul>
             </div>
 
@@ -163,5 +163,6 @@
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
 <script src="https://kit.fontawesome.com/398116af51.js" crossorigin="anonymous"></script>
+<script src="{% static 'js/main.js' %}"></script>
 </body>
 </html>
