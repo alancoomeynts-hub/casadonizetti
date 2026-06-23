@@ -191,7 +191,7 @@ main {
   background-color: var(--section-bg);
   color: var(--main-bg);
 }
-.section-bg h1,h2,p{
+.section-bg h1,h2,h3,p{
   color: var(--main-bg);
 }
 .section-bg .cta-btn{
@@ -206,10 +206,21 @@ main {
   border: 1px solid var(--section-bg);
 }
 /* reserve.html styles*/
-#reserve-form{
+#reserve-form,
+#login-form,
+#signup-form,
+#passwordreset-form,
+#emailconfirm-form{
   border-radius: 1rem;
 }
 
+#reserve-form a,
+#login-form a,
+#signup-form a,
+#passwordreset-form a,
+#emailconfirm-form a{
+  color: var(--nav-link);
+}
 
 /* menu.html styles*/
 
