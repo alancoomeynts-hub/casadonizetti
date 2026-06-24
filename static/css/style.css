@@ -245,7 +245,6 @@ main {
 
 .badge{
   border: 1px solid var(--text-main);
-
 }
 
 .badge-logged-in{
@@ -256,7 +255,6 @@ main {
 
 .badge-logged-out{
   background-color: #6c757d;
-
 }
 
 /* featured dishes card styles*/
@@ -268,6 +266,10 @@ main {
 
 }
 
+.alert{
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
 .card .card-img-top{
   border-radius: 1rem;
   width: 100%;

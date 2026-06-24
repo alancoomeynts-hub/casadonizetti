@@ -1,4 +1,5 @@
 from django.shortcuts import render, redirect
+from django.contrib import messages
 from datetime import datetime
 from django.contrib.auth.decorators import login_required
 from bookings.forms import ReservationForm
@@ -30,6 +31,9 @@ def reservation_view(request):
                 reservation.contact_email = request.user.email
 
                 reservation.save()
+                messages.add_message(
+                    request, messages.SUCCESS, 'Your reservation has been made successfully.'
+                )
                 return redirect('homepage')
 
     return render(
