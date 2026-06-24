@@ -95,6 +95,22 @@
     </nav>
 
     <main id="main" class="flex-shrink-0">
+   {% if user.is_authenticated %}
+  <p class="m-3">
+    <span class="badge rounded-pill badge-logged-in">
+      Logged in as {{ user }}
+    </span>
+  </p>
+{% else %}
+  <p class="m-3">
+    <span class="badge rounded-pill badge-logged-out">
+      Not logged in
+    </span>
+  </p>
+{% endif %}
+
+
+
         {% block content %}
         {% endblock content %}
         <div id="cta-banner">

@@ -240,6 +240,25 @@ main {
   border: 2px solid var(--nav-cta-hover);
   color: var(--nav-cta-hover);
 }
+
+/* authentification badge styles*/
+
+.badge{
+  border: 1px solid var(--text-main);
+
+}
+
+.badge-logged-in{
+  background-color: #d7dfcf;
+  color: #2f4a3a;
+
+}
+
+.badge-logged-out{
+  background-color: #6c757d;
+
+}
+
 /* featured dishes card styles*/
 .card{
   border: 1px solid rgba(0, 0, 0, 0.05);
