@@ -269,6 +269,8 @@ main {
 .alert{
   border-radius: 0.5rem;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  background-color: var(--section-bg);
+  color: var(--main-bg);
 }
 .card .card-img-top{
   border-radius: 1rem;
