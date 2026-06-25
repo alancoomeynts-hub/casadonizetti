@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib import messages
 from datetime import datetime
 from django.contrib.auth.decorators import login_required
@@ -42,3 +42,9 @@ def reservation_view(request):
         {'form':form}
 
     )
+
+def cancel_reservation(request,pk):
+    reservation=get_object_or_404(Reservation,pk=pk,user=request.user)
+    reservation.delete()
+    messages.add_message(request,messages.SUCCESS,'Your reservation has been cancelled successfully.')
+    return redirect('profile')
