@@ -10,7 +10,7 @@ document.addEventListener( "DOMContentLoaded", function() {
         const reservationId = button.getAttribute('data-reservation-id');
         const cancelUrl = button.getAttribute('data-cancel-url');
         reservationText.textContent=reservationDate;
-        cancelConfirm.href=cancelUrl
+        cancelConfirm.action=cancelUrl
 
 
 

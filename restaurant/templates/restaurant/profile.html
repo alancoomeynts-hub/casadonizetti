@@ -35,14 +35,16 @@
               <td>{{ reservation.table }}</td>
               <td>
                 <div class="d-flex gap-2">
-                  <a href="" class="">
+                  <button type="button" class="btn btn-success btn-edit" data-bs-toggle="modal"
+                    data-bs-target="#editReservationModal" data-reservation-id="{{ reservation.pk }}"
+                    data-edit-url=""
+                    data-reservation-date="{{ reservation.reservation_for|date:" d M Y" }} at {{reservation.reservation_for|time:'H:i' }}">
                     Edit
-                  </a>
+                  </button>
                   <button type="button" class="btn btn-danger btn-delete" data-bs-toggle="modal"
                     data-bs-target="#cancelReservationModal" data-reservation-id="{{ reservation.pk }}"
                     data-cancel-url="{% url 'cancel_reservation' reservation.pk %}"
-                    data-reservation-date="{{ reservation.reservation_for|date:" d M Y" }} at {{
-                    reservation.reservation_for|time:'H:i' }}">
+                    data-reservation-date="{{ reservation.reservation_for|date:" d M Y" }} at {{reservation.reservation_for|time:'H:i' }}">
                     Cancel
                   </button>
                 </div>
@@ -73,11 +75,12 @@
               <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">
                 Keep reservation
               </button>
-
-              <a id="cancelConfirm" href="#" class="btn btn-danger">
-                Confirm cancellation
-              </a>
-
+                <form id="cancelConfirm" method="POST" action="" >
+                    {% csrf_token %}
+                      <button type="submit" class="btn btn-danger">
+                        Confirm cancellation
+                      </button>
+                </form>
             </div>
           </div>
         </div>

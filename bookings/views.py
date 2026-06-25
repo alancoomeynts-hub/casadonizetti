@@ -45,6 +45,8 @@ def reservation_view(request):
 
 def cancel_reservation(request,pk):
     reservation=get_object_or_404(Reservation,pk=pk,user=request.user)
-    reservation.delete()
-    messages.add_message(request,messages.SUCCESS,'Your reservation has been cancelled successfully.')
+    if request.method == 'POST':
+            reservation.delete()
+            messages.add_message(request,messages.SUCCESS,'Your reservation has been cancelled successfully.')
+            return redirect('profile')
     return redirect('profile')
