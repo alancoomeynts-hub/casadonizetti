@@ -1,46 +1,50 @@
-{% extends "base.html" %}
-
-{% block content %}
+{% extends "base.html" %} {% block content %}
 
 <div class="container mt-4 text-center">
-<h1>Our {{ menu.name }}</h1>
+  <h1>Our {{ menu.name }}</h1>
 
-<nav class="menu-nav d-flex flex-wrap justify-content-center gap-2 py-4 my-2">
-  {% for section in menu.sections.all %}
-    <a href="#{{ section.slug }}" class="text-center me-2 mb-2 py-2 px-3">{{ section.name }} </a>
-  {% endfor %}
-</nav>
+  <nav class="menu-nav d-flex flex-wrap justify-content-center gap-2 py-4 my-2">
+    {% for section in menu.sections.all %}
+    <a href="#{{ section.slug }}" class="text-center me-2 mb-2 py-2 px-3"
+      >{{ section.name }}
+    </a>
+    {% endfor %}
+  </nav>
 
-<section class="featured py-4">
+  <section class="featured py-4">
     <div class="row g-3">
-        {% for item in featured_items %}
-        <div class="col-12 col-md-4">
-            <div class="card h-100">
-                <img src="{{ item.featured_image.url }}" alt="image of {{ item.name }}" class="card-img-top">
-                <div class="card-body">
-                    <h5 class="card-title">{{ item.name }}</h5>
-                </div>
-            </div>
+      {% for item in featured_items %}
+      <div class="col-12 col-md-4">
+        <div class="card h-100">
+          <img
+            src="{{ item.featured_image.url }}"
+            alt="image of {{ item.name }}"
+            class="card-img-top"
+          />
+          <div class="card-body">
+            <h5 class="card-title">{{ item.name }}</h5>
+          </div>
         </div>
-        {% endfor %}
-    </div>
-</section>
-
-{% for section in menu.sections.all %}
-  <section id="{{ section.slug }}" class="menu-section m-3 py-4 text-center">
-    <h2>{{ section.name }}</h2>
-
-    <div class=" row menu-grid py-2">
-      {% for item in section.items.all %}
-        <div class=" col-12 col-md-6 menu-item py-2">
-          <h3>{{ item.name }}</h3>
-          <p>{{ item.description }}</p>
-          <p>{{ item.price }}</p>
-        </div>
+      </div>
       {% endfor %}
     </div>
   </section>
-{% endfor %}
+
+  {% for section in menu.sections.all %}
+  <section id="{{ section.slug }}" class="menu-section m-3 py-4 text-center">
+    <h2>{{ section.name }}</h2>
+
+    <div class="row menu-grid py-2">
+      {% for item in section.items.all %}
+      <div class="col-12 col-md-6 menu-item py-2">
+        <h3>{{ item.name }}</h3>
+        <p>{{ item.description }}</p>
+        <p>{{ item.price }}</p>
+      </div>
+      {% endfor %}
+    </div>
+  </section>
+  {% endfor %}
 </div>
 
 {% endblock %}

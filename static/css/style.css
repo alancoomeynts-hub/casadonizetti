@@ -201,19 +201,11 @@ main {
 }
 
 .section-bg .cta-btn:hover{
-    background-color: var(--main-bg);
+  background-color: var(--main-bg);
   color: var(--section-bg);
   border: 1px solid var(--section-bg);
 }
 /* reserve.html styles*/
-#reserve-form,
-#login-form,
-#signup-form,
-#passwordreset-form,
-#emailconfirm-form{
-  border-radius: 1rem;
-}
-
 #reserve-form a,
 #login-form a,
 #signup-form a,
@@ -278,3 +270,4 @@ main {
   height: auto;
 
 }
+
