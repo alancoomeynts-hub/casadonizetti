@@ -2,6 +2,7 @@
 {% url 'cancel_reservation' as cancel_url %}
 {% block content %}
 {% load static %}
+{% load crispy_forms_tags %}
 
 <section id="profile-details" class="container section-bg rounded-3 my-3 py-3">
   <div class="row">
@@ -37,14 +38,14 @@
                 <div class="d-flex gap-2">
                   <button type="button" class="btn btn-success btn-edit" data-bs-toggle="modal"
                     data-bs-target="#editReservationModal" data-reservation-id="{{ reservation.pk }}"
-                    data-edit-url=""
-                    data-reservation-date="{{ reservation.reservation_for|date:" d M Y" }} at {{reservation.reservation_for|time:'H:i' }}">
+                    data-edit-url="" data-reservation-party-size="{{ reservation.party_size }}"
+                    data-reservation-date="{{ reservation.reservation_for|date:"Y-m-d" }}" data-reservation-time= "{{reservation.reservation_for|time:'H:i' }}">
                     Edit
                   </button>
                   <button type="button" class="btn btn-danger btn-delete" data-bs-toggle="modal"
                     data-bs-target="#cancelReservationModal" data-reservation-id="{{ reservation.pk }}"
                     data-cancel-url="{% url 'cancel_reservation' reservation.pk %}"
-                    data-reservation-date="{{ reservation.reservation_for|date:" d M Y" }} at {{reservation.reservation_for|time:'H:i' }}">
+                    data-reservation-date="{{ reservation.reservation_for|date:"Y-m-d" }} at {{reservation.reservation_for|time:'H:i' }}">
                     Cancel
                   </button>
                 </div>
@@ -58,6 +59,36 @@
           </tbody>
         </table>
       </div>
+
+          <div class="modal fade" id="editReservationModal" tabindex="-1" aria-labelledby="editReservationModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="editReservationModalLabel">Cancel Reservation</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form id="editReservationForm" method="POST" action="" >
+                    {% csrf_token %}
+                    {{ form|crispy }}
+                </form>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">
+                Cancel Edit
+              </button>
+               <button type="submit" form="editReservationForm" class="btn btn-success"> Confirm Edit
+               </button>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
       <div class="modal fade" id="cancelReservationModal" tabindex="-1" aria-labelledby="cancelReservationModalLabel"
         aria-hidden="true">
         <div class="modal-dialog">
@@ -65,7 +96,6 @@
             <div class="modal-header">
               <h5 class="modal-title" id="cancelReservationModalLabel">Cancel Reservation</h5>
               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-
             </div>
             <div class="modal-body">
               <p class="mb-2"> Are you sure you want to cancel this reservation?</p>
@@ -85,8 +115,6 @@
           </div>
         </div>
       </div>
-    </div>
-  </div>
 
 </section>
 

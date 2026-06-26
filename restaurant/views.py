@@ -1,10 +1,10 @@
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, get_object_or_404
 from bookings.models import Reservation
+from bookings.forms import ReservationForm
 from .models import Restaurant, Profile
 from django.contrib import messages
 from allauth.account.views import SignupView
-
 
 def restaurant_homepage(request):
     restaurant=get_object_or_404(Restaurant,pk=1)
@@ -22,5 +22,6 @@ def profile_view(request):
     user=request.user
     profile=get_object_or_404(Profile,user=user)
     reservations=Reservation.objects.filter(user=user)
+    form=ReservationForm()
 
-    return render(request,'restaurant/profile.html',{'user':user,'profile':profile,'reservations':reservations,})
+    return render(request,'restaurant/profile.html',{'user':user,'profile':profile,'reservations':reservations,'form':form})
