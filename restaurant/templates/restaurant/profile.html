@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% url 'cancel_reservation' as cancel_url %}
+{% url 'edit_reservation' as edit_url %}
 {% block content %}
 {% load static %}
 {% load crispy_forms_tags %}
@@ -36,12 +37,19 @@
               <td>{{ reservation.table }}</td>
               <td>
                 <div class="d-flex gap-2">
-                  <button type="button" class="btn btn-success btn-edit" data-bs-toggle="modal"
-                    data-bs-target="#editReservationModal" data-reservation-id="{{ reservation.pk }}"
-                    data-edit-url="" data-reservation-party-size="{{ reservation.party_size }}"
-                    data-reservation-date="{{ reservation.reservation_for|date:"Y-m-d" }}" data-reservation-time= "{{reservation.reservation_for|time:'H:i' }}">
-                    Edit
-                  </button>
+                <button
+                  type="button"
+                  class="btn btn-success btn-edit"
+                  data-bs-toggle="modal"
+                  data-bs-target="#editReservationModal"
+                  data-reservation-id="{{ reservation.pk }}"
+                  data-edit-url="{% url 'edit_reservation' reservation.pk %}"
+                  data-reservation-party-size="{{ reservation.party_size }}"
+                  data-reservation-date="{{ reservation.reservation_for|date:'Y-m-d' }}"
+                  data-reservation-time="{{ reservation.reservation_for|time:'H:i' }}"
+                >
+                  Edit
+                </button>
                   <button type="button" class="btn btn-danger btn-delete" data-bs-toggle="modal"
                     data-bs-target="#cancelReservationModal" data-reservation-id="{{ reservation.pk }}"
                     data-cancel-url="{% url 'cancel_reservation' reservation.pk %}"

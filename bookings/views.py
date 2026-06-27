@@ -50,3 +50,33 @@ def cancel_reservation(request,pk):
             messages.add_message(request,messages.SUCCESS,'Your reservation has been cancelled successfully.')
             return redirect('profile')
     return redirect('profile')
+
+def edit_reservation(request,pk):
+    reservation=get_object_or_404(Reservation,pk=pk,user=request.user)
+
+    if request.method == 'POST':
+        form=ReservationForm(request.POST,instance=reservation)
+        if form.is_valid():
+            reservation=form.save(commit=False)
+            reservation.user=request.user
+
+            date=form.cleaned_data['reservation_date']
+            time=form.cleaned_data['reservation_time']
+            time_converted = datetime.strptime(time, '%H:%M').time()
+            reservation.reservation_for = datetime.combine(date, time_converted)
+
+            reserved_tables = Reservation.objects.filter(reservation_for=reservation.reservation_for).values_list(
+                'table_id', flat=True)
+
+            available_tables = Table.objects.filter(capacity__gte=reservation.party_size).exclude(
+                id__in=reserved_tables).order_by("capacity").first()
+
+            if available_tables is None:
+                messages.error(request, 'Sorry, no tables are available at that time or party size.')
+            else:
+                reservation.table = available_tables
+                reservation.user = request.user
+                reservation.save()
+                messages.add_message(request,messages.SUCCESS,'Your reservation has been updated successfully.')
+                return redirect('profile')
+    return redirect('profile')
