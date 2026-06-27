@@ -7,197 +7,185 @@
 {% url 'account_logout' as logout_url %}
 {% url 'profile' as profile_url %}
 
+
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Casa Donizetti</title>
-
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
-
-    <link rel="stylesheet" href="{% static 'css/style.css' %}">
-</head>
-<body class="d-flex flex-column min-vh-100">
-
-    <nav id="navbar" class="navbar navbar-expand-md fixed-top" aria-label="navbar">
-        <div class="container-fluid">
-
-            <a class="navbar-brand" href="{{home_url}}">
-                <img src="{% static 'images/logo.webp' %}" alt="Casa Donizetti Logo">
-            </a>
-
-            <button class="navbar-toggler" type="button"
-                    data-bs-toggle="offcanvas"
-                    data-bs-target="#offcanvasDarkNavbar"
-                    aria-controls="offcanvasDarkNavbar"
-                    aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-
-            <div class="offcanvas offcanvas-end text-bg-dark"
-                 tabindex="-1"
-                 id="offcanvasDarkNavbar"
-                 aria-labelledby="offcanvasDarkNavbarLabel">
-
-                <div class="offcanvas-header">
-                    <p class="offcanvas-title mb-0" id="offcanvasDarkNavbarLabel">
-                        Navigation
-                    </p>
-                    <button type="button"
-                            class="btn-close btn-close-white"
-                            data-bs-dismiss="offcanvas"
-                            aria-label="Close"></button>
-                </div>
-
-                <div class="offcanvas-body">
-                    <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
-
-                        <li class="nav-item">
-                            <a class="nav-link {% if request.path == home_url %}active{% endif %}" aria-current="page" href="{{home_url}}" >
-                                Home
-                            </a>
-                        </li>
-
-                        <li class="nav-item">
-                            <a class="nav-link {% if request.path == menu_url %}active{% endif %}" href="{{ menu_url }}" >
-                                Menu
-                            </a>
-                        </li>
-
-                        <li class="nav-item">
-                            <a class="nav-link" href="">
-                               Contact Us
-                            </a>
-                        </li>
-                        {% if user.is_authenticated %}
-                        <li class="nav-item">
-                        <a class="nav-link {% if request.path == profile_url %}active{% endif %}" aria-current="page" href="{% url 'profile' %}">Profile</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link {% if request.path == logout_url %}active{% endif %}" aria-current="page" href="{% url 'account_logout' %}">Logout</a>
-                        </li>
-
-                        {% else %}
-                        <li class="nav-item">
-                            <a class="nav-link {% if request.path == signup_url %}active{% endif %}" aria-current="page"
-                                href="{% url 'account_signup' %}">Register</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link {% if request.path == login_url %}active{% endif %}" aria-current="page" href="{% url 'account_login' %}">Login</a>
-                        </li>
-
-                        {% endif %}
-                        <li id="nav-cta" class="nav-item">
-                            <a href="{{ reserve_url }}"  class="cta-btn btn btn-lg ms-3 d-none d-md-block">
-                                Reserve a Table
-                            </a>
-                        </li>
-
-                    </ul>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Casa Donizetti</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+              rel="stylesheet"
+              integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+              crossorigin="anonymous">
+        <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    </head>
+    <body class="d-flex flex-column min-vh-100">
+        <nav id="navbar"
+             class="navbar navbar-expand-md fixed-top"
+             aria-label="navbar">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="{{ home_url }}">
+                    <img src="{% static 'images/logo.webp' %}" alt="Casa Donizetti Logo">
+                </a>
+                <button class="navbar-toggler"
+                        type="button"
+                        data-bs-toggle="offcanvas"
+                        data-bs-target="#offcanvasDarkNavbar"
+                        aria-controls="offcanvasDarkNavbar"
+                        aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="offcanvas offcanvas-end text-bg-dark"
+                     tabindex="-1"
+                     id="offcanvasDarkNavbar"
+                     aria-labelledby="offcanvasDarkNavbarLabel">
+                    <div class="offcanvas-header">
+                        <p class="offcanvas-title mb-0" id="offcanvasDarkNavbarLabel">Navigation</p>
+                        <button type="button"
+                                class="btn-close btn-close-white"
+                                data-bs-dismiss="offcanvas"
+                                aria-label="Close"></button>
+                    </div>
+                    <div class="offcanvas-body">
+                        <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                            <li class="nav-item">
+                                <a class="nav-link {% if request.path == home_url %}active{% endif %}"
+                                   aria-current="page"
+                                   href="{{ home_url }}">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link {% if request.path == menu_url %}active{% endif %}"
+                                   href="{{ menu_url }}">Menu</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="">Contact Us</a>
+                            </li>
+                            {% if user.is_authenticated %}
+                                <li class="nav-item">
+                                    <a class="nav-link {% if request.path == profile_url %}active{% endif %}"
+                                       aria-current="page"
+                                       href="{% url 'profile' %}">Profile</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link {% if request.path == logout_url %}active{% endif %}"
+                                       aria-current="page"
+                                       href="{% url 'account_logout' %}">Logout</a>
+                                </li>
+                            {% else %}
+                                <li class="nav-item">
+                                    <a class="nav-link {% if request.path == signup_url %}active{% endif %}"
+                                       aria-current="page"
+                                       href="{% url 'account_signup' %}">Register</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link {% if request.path == login_url %}active{% endif %}"
+                                       aria-current="page"
+                                       href="{% url 'account_login' %}">Login</a>
+                                </li>
+                            {% endif %}
+                            {% if user.is_authenticated and user.is_superuser %}
+                                   <a class="nav-link"
+                                       aria-current="page"
+                                       href="{% url 'admin:index' %}">Admin</a>
+                            {% endif %}
+                            <li id="nav-cta" class="nav-item">
+                                <a href="{{ reserve_url }}"
+                                   class="cta-btn btn btn-lg ms-3 d-none d-md-block">Reserve a Table</a>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
             </div>
-        </div>
-    </nav>
-
-    <main id="main" class="flex-shrink-0">
-<div class="container mt-3">
-  <div class="row">
-    <div class="col-md-8 offset-md-2">
-      {% for message in messages %}
-        <div class="alert {{ message.tags }} alert-dismissible fade show d-flex align-items-center gap-2"
-             role="alert">
-          <div class="me-auto">{{ message|safe }}</div>
-          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-        </div>
-      {% endfor %}
-    </div>
-  </div>
-</div>
-
-   {% if user.is_authenticated %}
-  <p class="m-3">
-    <span class="badge rounded-pill badge-logged-in">
-      Logged in as {{ user }}
-    </span>
-  </p>
-{% else %}
-  <p class="m-3">
-    <span class="badge rounded-pill badge-logged-out">
-      Not logged in
-    </span>
-  </p>
-{% endif %}
-
-
-
-        {% block content %}
-        {% endblock content %}
-        <div id="cta-banner">
-            <a href="" class="cta-btn btn btn-lg d-md-none">
-                Reserve a Table
-            </a>
-        </div>
-    </main>
-
-<footer id="footer" class="mt-auto">
-    <div class="container py-md-4 py-1">
-        <div class="row g-3 align-items-start ">
-
-            <div class="col-12 col-md-4 d-none d-md-block">
-                <p class="footer-headings mb-2">Quick Links</p>
-                <ul class="quick-links mb-0">
-                    <li><a class="anchor" href="{{home_url}}">Home</a></li>
-                    <li><a class="anchor" href="{{ menu_url }}">Menu</a></li>
-                    <li><a class="anchor" href="">Contact</a></li>
-                    <li><a class="anchor" href="{{ reserve_url}}">Reserve a Table</a></li>
-                </ul>
+        </nav>
+        <main id="main" class="flex-shrink-0">
+            <div class="container mt-3">
+                <div class="row">
+                    <div class="col-md-8 offset-md-2">
+                        {% for message in messages %}
+                            <div class="alert {{ message.tags }} alert-dismissible fade show d-flex align-items-center gap-2"
+                                 role="alert">
+                                <div class="me-auto">{{ message|safe }}</div>
+                                <button type="button"
+                                        class="btn-close"
+                                        data-bs-dismiss="alert"
+                                        aria-label="Close"></button>
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div>
             </div>
-
-            <div class="col-12 col-md-4 d-none d-md-block">
-                <p class="footer-headings mb-2">Contact</p>
-                <address class="mb-0 footer-contact">
-                    <div class="d-flex align-items-start mb-2">
-                        <span class="flex-shrink-0 me-2"><i class="fa-solid fa-building-columns"></i></span>
-                        <span>{{ restaurant.address|safe }}</span>
-                    </div>
-
-                    <div class="d-flex align-items-start mb-2">
-                        <span class="flex-shrink-0 me-2"><i class="fa-solid fa-phone"></i></span>
-                        <span><a href="tel:{{ restaurant.phone }}" class="anchor">{{ restaurant.phone }}</a></span>
-                    </div>
-
-                    <div class="d-flex align-items-start">
-                        <span class="flex-shrink-0 me-2"><i class="fa-regular fa-paper-plane"></i></span>
-                        <span><a href="mailto:{{ restaurant.email }}?subject=Booking%20Enquiry" class="anchor">{{ restaurant.email }}</a></span>
-                    </div>
-                </address>
-
-                <p class="footer-contact mt-3 mb-0">
-                    Open daily: {{ restaurant.open_at }} to {{ restaurant.closes_at }} <br>
-                    Closed on Christmas Day and St Stephen's Day.
+            {% if user.is_authenticated %}
+                <p class="m-3">
+                    <span class="badge rounded-pill badge-logged-in">Logged in as {{ user }}</span>
                 </p>
-
+            {% else %}
+                <p class="m-3">
+                    <span class="badge rounded-pill badge-logged-out">Not logged in</span>
+                </p>
+            {% endif %}
+            {% block content %}
+            {% endblock content %}
+            <div id="cta-banner">
+                <a href="" class="cta-btn btn btn-lg d-md-none">Reserve a Table</a>
             </div>
-
-            <div class="col-12 col-md-4">
-                <p class="footer-headings mb-2 d-none d-md-block">Follow us on</p>
-                <div class="social-links d-flex gap-3 justify-content-between justify-content-md-start">
-                    {% for link in social_links %}
-                        <a href="{{ link.url }}" target="_blank" rel="noopener" aria-label="{{ link.platform }}">
-                            <i class="{{ link.icon }}"></i>
-                        </a>
-                    {% endfor %}
+        </main>
+        <footer id="footer" class="mt-auto">
+            <div class="container py-md-4 py-1">
+                <div class="row g-3 align-items-start ">
+                    <div class="col-12 col-md-4 d-none d-md-block">
+                        <p class="footer-headings mb-2">Quick Links</p>
+                        <ul class="quick-links mb-0">
+                            <li><a class="anchor" href="{{ home_url }}">Home</a></li>
+                            <li><a class="anchor" href="{{ menu_url }}">Menu</a></li>
+                            <li><a class="anchor" href="">Contact</a></li>
+                            <li><a class="anchor" href="{{ reserve_url }}">Reserve a Table</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-12 col-md-4 d-none d-md-block">
+                        <p class="footer-headings mb-2">Contact</p>
+                        <address class="mb-0 footer-contact">
+                            <div class="d-flex align-items-start mb-2">
+                                <span class="flex-shrink-0 me-2"><i class="fa-solid fa-building-columns"></i></span>
+                                <span>{{ restaurant.address|safe }}</span>
+                            </div>
+                            <div class="d-flex align-items-start mb-2">
+                                <span class="flex-shrink-0 me-2"><i class="fa-solid fa-phone"></i></span>
+                                <span><a href="tel:{{ restaurant.phone }}" class="anchor">{{ restaurant.phone }}</a></span>
+                            </div>
+                            <div class="d-flex align-items-start">
+                                <span class="flex-shrink-0 me-2"><i class="fa-regular fa-paper-plane"></i></span>
+                                <span><a href="mailto:{{ restaurant.email }}?subject=Booking%20Enquiry"
+   class="anchor">{{ restaurant.email }}</a></span>
+                            </div>
+                        </address>
+                        <p class="footer-contact mt-3 mb-0">
+                            Open daily: {{ restaurant.open_at }} to {{ restaurant.closes_at }}
+                            <br>
+                            Closed on Christmas Day and St Stephen's Day.
+                        </p>
+                    </div>
+                    <div class="col-12 col-md-4">
+                        <p class="footer-headings mb-2 d-none d-md-block">Follow us on</p>
+                        <div class="social-links d-flex gap-3 justify-content-between justify-content-md-start">
+                            {% for link in social_links %}
+                                <a href="{{ link.url }}"
+                                   target="_blank"
+                                   rel="noopener"
+                                   aria-label="{{ link.platform }}">
+                                    <i class="{{ link.icon }}"></i>
+                                </a>
+                            {% endfor %}
+                        </div>
+                    </div>
                 </div>
             </div>
-
-        </div>
-
-    </div>
-</footer>
-
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
-<script src="https://kit.fontawesome.com/398116af51.js" crossorigin="anonymous"></script>
-<script src="{% static 'js/main.js' %}"></script>
-</body>
+        </footer>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+                integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+                crossorigin="anonymous"></script>
+        <script src="https://kit.fontawesome.com/398116af51.js"
+                crossorigin="anonymous"></script>
+        <script src="{% static 'js/main.js' %}"></script>
+    </body>
 </html>
