@@ -27,8 +27,5 @@ class CustomSignupForm(SignupForm):
         profile.address = self.cleaned_data.get('address','')
         profile.save()
 
-class CustomLoginForm(forms.Form):
-    username=forms.CharField(widget=forms.TextInput(attrs={'placeholder':'Enter your username','class': 'form-control'}))
-    password=forms.CharField(widget=forms.PasswordInput(attrs={'placeholder':'Enter your password','class': 'form-control'}))
 
 
