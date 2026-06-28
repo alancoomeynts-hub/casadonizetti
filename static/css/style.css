@@ -224,7 +224,7 @@ a{
 }
 
 .menu-nav a{
-  background-color: var(--nav-cta);
+  background-color: var(--section-bg);
   border-radius: 1rem;
   text-decoration: none;
   color: var(--nav-link);
