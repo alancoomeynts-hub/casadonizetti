@@ -5,13 +5,13 @@
   --main-bg: #f4ebdd;
   --footer: #7a2e35;
   --section-bg: #6b7c5a;
+  --section-btn: #ece0b8;
 
   --nav-link: #f4ebdd;
   --nav-cta: #b08d57;
-  --nav-cta-hover: #9a7846;
+  --nav-cta-hover: #8f7947;
 
   --heading-primary: #241a17;
-  --heading-secondary: #6b5647;
   --text-main: #2b2621;
 
   --footer-link: #fff4e8;
@@ -86,7 +86,7 @@ h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-headings);
   font-size: 1.4rem;
   color: var(--nav-link);
-  border: 3px solid #000000;
+  border: 3px solid var(--text-main);
   font-weight: 500;
   letter-spacing: 0.05rem;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.24);
@@ -94,16 +94,39 @@ h1, h2, h3, h4, h5, h6 {
 
 }
 
-
 .cta-btn:hover {
   background-color: var(--nav-cta-hover);
-  border-color: var(--nav-link);
   color: var(--nav-link);
   transform: translateY(3px);
 }
-main {
-  padding-top: 5px;
+
+
+.section-bg{
+  background-color: var(--section-bg);
+  color: var(--main-bg);
 }
+
+.section-bg h1,
+.section-bg h2,
+.section-bg h3,
+.section-bg p {
+  color: var(--main-bg);
+}
+
+.section-bg .cta-btn{
+  background-color: var(--section-btn);
+  color: var(--text-main);
+  border: 1px solid var(--section-btn);
+}
+
+.section-bg .cta-btn:hover{
+  background-color: var(--main-bg);
+  color: var(--section-bg);
+  border: 1px solid var(--section-bg);
+}
+
+/*about page styles*/
+
 
 .about {
   font-family: var(--font-body);
@@ -180,37 +203,17 @@ main {
   transform: translateY(-2px);
 }
 /* general main styles */
-
+main {
+  padding-top: 5px;
+}
 .home-img{
   width: 100%;
   height: 400px;
   object-fit: cover;
 }
 
-.section-bg{
-  background-color: var(--section-bg);
-  color: var(--main-bg);
-}
-.section-bg h1,h2,h3,p{
-  color: var(--main-bg);
-}
-.section-bg .cta-btn{
-  background-color: var(--section-bg);
-  color: var(--main-bg);
-  border: 1px solid var(--main-bg);
-}
 
-.section-bg .cta-btn:hover{
-  background-color: var(--main-bg);
-  color: var(--section-bg);
-  border: 1px solid var(--section-bg);
-}
-/* reserve.html styles*/
-#reserve-form a,
-#login-form a,
-#signup-form a,
-#passwordreset-form a,
-#emailconfirm-form a{
+a{
   color: var(--nav-link);
 }
 
@@ -270,6 +273,7 @@ main {
   height: auto;
 
 }
+/*allauth forms styles*/
 
 .allauthforms input,
 .allauthforms form select,
@@ -291,3 +295,40 @@ main {
     display: inline-block;
     padding: 0;
 }
+
+/* profile table styles*/
+
+#profile-details .table tbody td {
+  background-color: var(--main-bg);
+}
+
+#profile-details .table thead th {
+  background-color: var(--navbar);
+  color: var(--main-bg);
+
+}
+
+.btn-edit {
+  background-color: var(--navbar);
+  border-color: var(--navbar);
+  color: var(--main-bg);
+}
+
+.btn-edit:hover {
+  background-color: #24392c;
+  border-color: #24392c;
+  color: var(--main-bg);
+}
+
+.btn-delete {
+  background-color: var(--footer);
+  border-color: var(--footer);
+  color: var(--main-bg);
+}
+
+.btn-delete:hover {
+  background-color: #62252b;
+  border-color: #62252b;
+  color: var(--main-bg);
+}
+
