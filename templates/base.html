@@ -6,8 +6,6 @@
 {% url 'account_signup' as signup_url %}
 {% url 'account_logout' as logout_url %}
 {% url 'profile' as profile_url %}
-
-
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -85,9 +83,7 @@
                                 </li>
                             {% endif %}
                             {% if user.is_authenticated and user.is_superuser %}
-                                   <a class="nav-link"
-                                       aria-current="page"
-                                       href="{% url 'admin:index' %}">Admin</a>
+                                <a class="nav-link" aria-current="page" href="{% url 'admin:index' %}">Admin</a>
                             {% endif %}
                             <li id="nav-cta" class="nav-item">
                                 <a href="{{ reserve_url }}"
