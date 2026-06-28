@@ -1,6 +1,6 @@
 from django.test import TestCase
 from django.contrib.auth.models import User
-from .forms import CustomSignupForm
+from restaurant.signup_forms import CustomSignupForm
 from .models import Profile
 
 class TestCustomSignupForm(TestCase):
@@ -14,6 +14,10 @@ class TestCustomSignupForm(TestCase):
     """
     def test_signup_form(self):
         form = CustomSignupForm(data={
+            'username': 'johndoe',
+            'email': 'john@example.com',
+            'password1': 'StrongPass123!',
+            'password2': 'StrongPass123!',
             'first_name': 'John',
             'last_name': 'Doe',
             'phone': '1234567890',
@@ -25,6 +29,10 @@ class TestCustomSignupForm(TestCase):
 
     def test_signup_form_invalid(self):
         form = CustomSignupForm(data={
+            'username': '',
+            'email': '',
+            'password1': '',
+            'password2': '',
             'first_name': '',
             'last_name': '',
             'phone': '',
@@ -40,6 +48,10 @@ class TestCustomSignupForm(TestCase):
             password='password123')
 
         form = CustomSignupForm(data={
+            'username': 'johndoe',
+            'email': 'john@example.com',
+            'password1': 'StrongPass123!',
+            'password2': 'StrongPass123!',
             'first_name': 'John',
             'last_name': 'Doe',
             'phone': '1234567890',

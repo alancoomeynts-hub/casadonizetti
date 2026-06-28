@@ -137,7 +137,10 @@ AUTH_PASSWORD_VALIDATORS = [
 
 ACCOUNT_EMAIL_VERIFICATION = 'optional'
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
-ACCOUNT_SIGNUP_FORM_CLASS = 'restaurant.forms.CustomSignupForm'
+ACCOUNT_FORMS = {
+    'signup': 'restaurant.signup_forms.CustomSignupForm',
+    'login': 'restaurant.login_forms.CustomLoginForm',
+}
 
 
 SITE_ID = 1
