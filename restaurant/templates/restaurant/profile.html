@@ -74,7 +74,7 @@
                                 <div class="modal-header">
                                     <h5 class="modal-title" id="editReservationModalLabel">Edit Reservation</h5>
                                     <button type="button"
-                                            class="btn-close"
+                                            class="btn-close btn-edit"
                                             data-bs-dismiss="modal"
                                             aria-label="Close"></button>
                                 </div>
@@ -86,9 +86,9 @@
                                 </div>
                                 <div class="modal-footer">
                                     <button type="button"
-                                            class="btn btn-outline-secondary"
+                                            class="btn btn-delete"
                                             data-bs-dismiss="modal">Cancel Edit</button>
-                                    <button type="submit" form="editReservationForm" class="btn btn-success">Confirm Edit</button>
+                                    <button type="submit" form="editReservationForm" class="btn btn-edit">Confirm Edit</button>
                                 </div>
                             </div>
                         </div>
@@ -104,7 +104,7 @@
                             <div class="modal-header">
                                 <h5 class="modal-title" id="cancelReservationModalLabel">Cancel Reservation</h5>
                                 <button type="button"
-                                        class="btn-close"
+                                        class="btn-close btn-delete"
                                         data-bs-dismiss="modal"
                                         aria-label="Close"></button>
                             </div>
@@ -114,11 +114,11 @@
                             </div>
                             <div class="modal-footer">
                                 <button type="button"
-                                        class="btn btn-outline-secondary"
+                                        class="btn btn-edit"
                                         data-bs-dismiss="modal">Keep reservation</button>
                                 <form id="cancelConfirm" method="POST" action="">
                                     {% csrf_token %}
-                                    <button type="submit" class="btn btn-danger">Confirm cancellation</button>
+                                    <button type="submit" class="btn btn-delete">Confirm cancellation</button>
                                 </form>
                             </div>
                         </div>
