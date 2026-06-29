@@ -346,7 +346,7 @@ main {
 
 /* Media queries*/
 @media (max-width: 767px) {
-  .section-btn {
+  .homepage-btn{
     margin-bottom: 1rem;
   }
 }
