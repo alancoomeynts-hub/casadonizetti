@@ -11,9 +11,9 @@ document.addEventListener( "DOMContentLoaded", function() {
                 if (!button) return;
 
                 const reservationDate = button.getAttribute('data-reservation-date');
-                const reservationId = button.getAttribute('data-reservation-id');
+                const reservationTable = button.getAttribute('data-reservation-table');
                 const cancelUrl = button.getAttribute('data-cancel-url');
-                reservationText.textContent = reservationDate;
+                reservationText.textContent = reservationDate+" at "+reservationTable;
                 cancelConfirm.action = cancelUrl
 
 

@@ -52,7 +52,8 @@
                                                         data-bs-target="#cancelReservationModal"
                                                         data-reservation-id="{{ reservation.pk }}"
                                                         data-cancel-url="{% url 'cancel_reservation' reservation.pk %}"
-                                                        data-reservation-date="{{ reservation.reservation_for|date:"Y-m-d" }} at {{ reservation.reservation_for|time:'H:i' }}">
+                                                        data-reservation-date="{{ reservation.reservation_for|date:"Y-m-d" }} at {{ reservation.reservation_for|time:'H:i' }}"
+                                                        data-reservation-table="{{ reservation.table }}">
                                                     Cancel
                                                 </button>
                                             </div>
