@@ -4,6 +4,7 @@ from datetime import datetime
 from django.contrib.auth.decorators import login_required
 from bookings.forms import ReservationForm
 from bookings.models import Reservation, Table
+from django.utils import timezone
 
 
 # Create your views here.
@@ -20,7 +21,8 @@ def reservation_view(request):
             date=form.cleaned_data['reservation_date']
             time=form.cleaned_data['reservation_time']
             time_converted=datetime.strptime(time,'%H:%M').time()
-            reservation.reservation_for=datetime.combine(date,time_converted)
+            reservation_datetime=datetime.combine(date,time_converted)
+            reservation.reservation_for=timezone.make_aware(reservation_datetime)
 
             reserved_tables=Reservation.objects.filter(reservation_for=reservation.reservation_for).values_list('table_id',flat=True)
 
@@ -77,9 +79,10 @@ def edit_reservation(request,pk):
             date=form.cleaned_data['reservation_date']
             time=form.cleaned_data['reservation_time']
             time_converted = datetime.strptime(time, '%H:%M').time()
-            reservation.reservation_for = datetime.combine(date, time_converted)
+            reservation_datetime = datetime.combine(date, time_converted)
+            reservation.reservation_for = timezone.make_aware(reservation_datetime)
 
-            reserved_tables = Reservation.objects.filter(reservation_for=reservation.reservation_for).values_list(
+            reserved_tables = Reservation.objects.filter(reservation_for=reservation.reservation_for).exclude(pk=reservation.pk).values_list(
                 'table_id', flat=True)
 
             available_tables = Table.objects.filter(capacity__gte=reservation.party_size).exclude(
@@ -93,4 +96,5 @@ def edit_reservation(request,pk):
                 reservation.save()
                 messages.add_message(request,messages.SUCCESS,'Your reservation has been updated successfully.')
                 return redirect('profile')
+
     return redirect('profile')
