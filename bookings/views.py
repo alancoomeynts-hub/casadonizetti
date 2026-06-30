@@ -41,11 +41,10 @@ def reservation_view(request):
                 )
                 return redirect('homepage')
 
-    return render(request,
-                  "reserve.html",
-                  {'form':form}
-                  )
+    return render(request,"reserve.html",{'form':form})
 
+
+@login_required
 def cancel_reservation(request,pk):
     """
     Cancel the logged-in user's reservation on POST and redirect to the profile page.
@@ -59,6 +58,7 @@ def cancel_reservation(request,pk):
             return redirect('profile')
     return redirect('profile')
 
+@login_required
 def edit_reservation(request,pk):
     """
     Update an existing reservation for the logged-in user.
