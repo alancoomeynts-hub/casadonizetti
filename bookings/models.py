@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
+from django.core.validators import MinValueValidator, MaxValueValidator
 
 # Create your models here.
 class Table(models.Model):
@@ -17,7 +18,9 @@ class Reservation(models.Model):
     contact_name = models.CharField(max_length=200)
     contact_email = models.EmailField()
     contact_phone = models.CharField(max_length=20)
-    party_size = models.PositiveIntegerField()
+    party_size = models.PositiveIntegerField(
+        validators=[MinValueValidator(1), MaxValueValidator(8)]
+    )
     reservation_for = models.DateTimeField()
     created_on = models.DateTimeField(auto_now_add=True)
 
