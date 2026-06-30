@@ -36,7 +36,7 @@
                                         <td>
                                             <div class="d-flex flex-column flex-md-row gap-2">
                                                 <button type="button"
-                                                        class="btn btn-edit w-100"
+                                                        class="btn btn-green w-100"
                                                         data-bs-toggle="modal"
                                                         data-bs-target="#editReservationModal"
                                                         data-reservation-id="{{ reservation.pk }}"
@@ -47,7 +47,7 @@
                                                     Edit
                                                 </button>
                                                 <button type="button"
-                                                        class="btn btn-delete w-100 "
+                                                        class="btn btn-red w-100 "
                                                         data-bs-toggle="modal"
                                                         data-bs-target="#cancelReservationModal"
                                                         data-reservation-id="{{ reservation.pk }}"
@@ -76,7 +76,7 @@
                                 <div class="modal-header">
                                     <h5 class="modal-title" id="editReservationModalLabel">Edit Reservation</h5>
                                     <button type="button"
-                                            class="btn-close btn-edit"
+                                            class="btn-close btn-green"
                                             data-bs-dismiss="modal"
                                             aria-label="Close"></button>
                                 </div>
@@ -88,9 +88,9 @@
                                 </div>
                                 <div class="modal-footer">
                                     <button type="button"
-                                            class="btn btn-delete"
+                                            class="btn btn-red"
                                             data-bs-dismiss="modal">Cancel Edit</button>
-                                    <button type="submit" form="editReservationForm" class="btn btn-edit">Confirm Edit</button>
+                                    <button type="submit" form="editReservationForm" class="btn btn-green">Confirm Edit</button>
                                 </div>
                             </div>
                         </div>
@@ -106,7 +106,7 @@
                             <div class="modal-header">
                                 <h5 class="modal-title" id="cancelReservationModalLabel">Cancel Reservation</h5>
                                 <button type="button"
-                                        class="btn-close btn-delete"
+                                        class="btn-close btn-green"
                                         data-bs-dismiss="modal"
                                         aria-label="Close"></button>
                             </div>
@@ -116,11 +116,11 @@
                             </div>
                             <div class="modal-footer">
                                 <button type="button"
-                                        class="btn btn-edit"
+                                        class="btn btn-green"
                                         data-bs-dismiss="modal">Keep reservation</button>
                                 <form id="cancelConfirm" method="POST" action="">
                                     {% csrf_token %}
-                                    <button type="submit" class="btn btn-delete">Confirm cancellation</button>
+                                    <button type="submit" class="btn btn-red">Confirm cancellation</button>
                                 </form>
                             </div>
                         </div>

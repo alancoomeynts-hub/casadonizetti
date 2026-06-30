@@ -138,25 +138,25 @@ main {
   border: 1px solid var(--section-bg);
 }
 
-.btn-edit {
+.btn-green {
   background-color: var(--navbar);
   border-color: var(--navbar);
   color: var(--main-bg);
 }
 
-.btn-edit:hover {
+.btn-green:hover {
   background-color: #24392c;
   border-color: #24392c;
   color: var(--main-bg);
 }
 
-.btn-delete {
+.btn-red {
   background-color: var(--footer);
   border-color: var(--footer);
   color: var(--main-bg);
 }
 
-.btn-delete:hover {
+.btn-red:hover {
   background-color: #62252b;
   border-color: #62252b;
   color: var(--main-bg);
