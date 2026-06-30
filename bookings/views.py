@@ -9,6 +9,11 @@ from bookings.models import Reservation, Table
 # Create your views here.
 @login_required
 def reservation_view(request):
+    """Create a reservation for the logged-in user if a suitable table is available.
+
+    On success, save the booking and redirect to the homepage with a confirmation message.
+    """
+
     form=ReservationForm(request.POST or None)
     if request.method == 'POST'and form.is_valid():
             reservation= form.save(commit=False)
@@ -36,15 +41,18 @@ def reservation_view(request):
                 )
                 return redirect('homepage')
 
-    return render(
-        request,
-        "reserve.html",
-        {'form':form}
-
-    )
+    return render(request,
+                  "reserve.html",
+                  {'form':form}
+                  )
 
 def cancel_reservation(request,pk):
+    """
+    Cancel the logged-in user's reservation on POST and redirect to the profile page.
+    """
+
     reservation=get_object_or_404(Reservation,pk=pk,user=request.user)
+
     if request.method == 'POST':
             reservation.delete()
             messages.add_message(request,messages.SUCCESS,'Your reservation has been cancelled successfully.')
@@ -52,6 +60,12 @@ def cancel_reservation(request,pk):
     return redirect('profile')
 
 def edit_reservation(request,pk):
+    """
+    Update an existing reservation for the logged-in user.
+
+    Reassign a table if one is available for the requested date, time, and party size.
+    """
+
     reservation=get_object_or_404(Reservation,pk=pk,user=request.user)
 
     if request.method == 'POST':

@@ -3,6 +3,8 @@ from cloudinary.models import CloudinaryField
 
 # Create your models here.
 class Menu(models.Model):
+    """Represent a restaurant menu."""
+
     name = models.CharField(max_length=200)
     slug = models.SlugField(max_length=200, unique=True)
     is_active = models.BooleanField(default=True)
@@ -11,6 +13,8 @@ class Menu(models.Model):
         return self.name
 
 class MenuSection(models.Model):
+    """Represent a section within a menu."""
+
     menu = models.ForeignKey(Menu, on_delete=models.CASCADE, related_name='sections')
     name = models.CharField(max_length=200)
     slug = models.SlugField(max_length=200)
@@ -27,6 +31,8 @@ class MenuSection(models.Model):
         return self.name
 
 class MenuItem(models.Model):
+    """Represent an item within a menu section."""
+
     section = models.ForeignKey(MenuSection, on_delete=models.CASCADE, related_name='items')
     name = models.CharField(max_length=200)
     description = models.TextField(blank=True)

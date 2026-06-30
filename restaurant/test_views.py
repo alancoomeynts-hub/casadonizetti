@@ -11,14 +11,6 @@ User=get_user_model()
 
 class RestaurantViewsTest(TestCase):
 
-    """
-    Unit test class for testing Restaurant-related views.
-
-    This class inherits from TestCase and provides unit tests for verifying the behavior
-    and functionality of views related to restaurant rendering, profile access, and
-    homepage responses within the application.
-    """
-
     def test_render_restaurant(self):
         self.restaurant=Restaurant(name="Test Restaurant", slug="test-restaurant",
                                    content="this is a test restaurant",email="test@test.ie",phone="12345678",address="test address",
@@ -37,15 +29,6 @@ class RestaurantViewsTest(TestCase):
         self.assertEqual(response.status_code, 404)
 
 class ProfileViewsTest(TestCase):
-
-    """
-    Test case for rendering profile view.
-
-    This class is designed to validate the behavior of the profile view, ensuring that:
-    - user,profile and reservation form context are correctly rendered.
-    - Ensures logged-in users can only see their reservations.
-
-    """
 
     def setUp(self):
         self.user1 = User.objects.create_user(

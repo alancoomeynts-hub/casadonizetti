@@ -3,6 +3,8 @@ from django.contrib.auth.models import User
 
 # Create your models here.
 class Restaurant(models.Model):
+    """Represent a restaurant's core contact and opening details."""
+
     name = models.CharField(max_length=200)
     slug = models.SlugField(max_length=200, unique=True)
     content = models.TextField(blank=True)
@@ -16,6 +18,7 @@ class Restaurant(models.Model):
         return f'{self.name}'
 
 class SocialLink(models.Model):
+    """Represent a social media link for a restaurant."""
 
     restaurant = models.ForeignKey(Restaurant, on_delete=models.CASCADE, related_name='social_links')
     platform=models.CharField(max_length=20)
@@ -27,6 +30,8 @@ class SocialLink(models.Model):
 
 
 class Profile(models.Model):
+    """Represent additional contact details for a user profile."""
+
     user = models.OneToOneField(User, on_delete=models.CASCADE, related_name='profile')
     phone = models.CharField(max_length=20, blank=True)
     address = models.TextField(blank=True)
