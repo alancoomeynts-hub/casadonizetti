@@ -1,5 +1,7 @@
 from django.test import TestCase
 from django.urls import reverse
+
+from .forms import ContactUsForm
 from .models import Restaurant, Profile, ContactRequest
 from bookings.forms import ReservationForm
 from bookings.models import Reservation, Table
@@ -118,7 +120,9 @@ class ContactUsViewsTest(TestCase):
         response=self.client.get(reverse("contact_us"))
 
         self.assertEqual(response.status_code, 200)
-        self.assertEqual('form',response.context)
+        self.assertIsInstance(
+            response.context['form'],ContactUsForm
+        )
 
     def test_contact_us_creates_contact_request(self):
         response = self.client.post(
