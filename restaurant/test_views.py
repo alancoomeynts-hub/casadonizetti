@@ -5,6 +5,7 @@ from bookings.forms import ReservationForm
 from bookings.models import Reservation, Table
 from django.contrib.auth import get_user_model
 from datetime import datetime, time
+from django.utils import timezone
 
 
 User=get_user_model()
@@ -88,7 +89,7 @@ class ProfileViewsTest(TestCase):
             user=self.user1,
             table=self.table,
             party_size=2,
-            reservation_for=datetime(2026, 6, 30, 19, 0),
+            reservation_for=timezone.make_aware(datetime(2026, 6, 30, 19, 0)),
             contact_name='testuser',
             contact_email='test@test.com'
         )
@@ -97,7 +98,7 @@ class ProfileViewsTest(TestCase):
             user=self.user2,
             table=self.table,
             party_size=3,
-            reservation_for=datetime(2026, 7, 1, 20, 0),
+            reservation_for=timezone.make_aware(datetime(2026, 6, 30, 19, 0)),
             contact_name='testuser2',
             contact_email='test2@test.com'
         )

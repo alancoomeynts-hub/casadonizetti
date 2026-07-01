@@ -4,6 +4,7 @@ from django.test import TestCase
 from django.urls import reverse
 from .forms import ReservationForm
 from .models import Reservation, Table
+from django.utils import timezone
 
 User=get_user_model()
 
@@ -52,14 +53,14 @@ class ReservationViewTests(TestCase):
         Reservation.objects.create(user=self.user,
                                    table=self.table_1,
                                    party_size=5,
-                                   reservation_for=datetime(2026, 6, 30, 19, 0),
+                                   reservation_for=timezone.make_aware(datetime(2026, 6, 30, 19, 0)),
                                    contact_name='testuser',
                                    contact_email="test@test.com"
                                    )
         Reservation.objects.create(user=self.user,
                                    table=self.table_2,
                                    party_size=3,
-                                   reservation_for=datetime(2026, 6, 30, 19, 0),
+                                   reservation_for=timezone.make_aware(datetime(2026, 6, 30, 19, 0)),
                                    contact_name='testuser',
                                    contact_email="test@test.com"
                                    )
@@ -80,7 +81,7 @@ class ReservationViewTests(TestCase):
         reservation = Reservation.objects.create(user=self.user,
                                    table=self.table_1,
                                    party_size=5,
-                                   reservation_for=datetime(2026, 6, 30, 19, 0),
+                                   reservation_for=timezone.make_aware(datetime(2026, 6, 30, 19, 0)),
                                    contact_name='testuser',
                                    contact_email="test@test.com"
                                    )
@@ -96,7 +97,7 @@ class ReservationViewTests(TestCase):
         reservation = Reservation.objects.create(user=self.user,
                                    table=self.table_1,
                                    party_size=5,
-                                   reservation_for=datetime(2026, 6, 30, 19, 0),
+                                   reservation_for=timezone.make_aware(datetime(2026, 6, 30, 19, 0)),
                                    contact_name='testuser',
                                    contact_email="test@test.com"
                                    )
