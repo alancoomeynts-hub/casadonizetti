@@ -259,6 +259,10 @@ main {
   height: auto;
 }
 
+.card-title{
+    font-size: 1.25rem;
+}
+
 .alert {
   border-radius: 0.5rem;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
@@ -274,6 +278,7 @@ main {
 
 .modal-title {
   color: var(--nav-link);
+  font-size: 1.25rem;
 }
 
 .modal-body {

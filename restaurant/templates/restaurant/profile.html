@@ -71,18 +71,19 @@
                          id="editReservationModal"
                          tabindex="-1"
                          aria-labelledby="editReservationModalLabel"
+                         role="dialog"
                          aria-hidden="true">
                         <div class="modal-dialog">
                             <div class="modal-content">
                                 <div class="modal-header">
-                                    <h5 class="modal-title" id="editReservationModalLabel">Edit Reservation</h5>
+                                    <h2 class="modal-title" id="editReservationModalLabel">Edit Reservation</h2>
                                     <button type="button"
                                             class="btn-close btn-green"
                                             data-bs-dismiss="modal"
                                             aria-label="Close"></button>
                                 </div>
                                 <div class="modal-body">
-                                    <form id="editReservationForm" method="POST" action="">
+                                    <form id="editReservationForm" method="POST">
                                         {% csrf_token %}
                                         {{ form|crispy }}
                                     </form>
@@ -96,16 +97,17 @@
                             </div>
                         </div>
                     </div>
-                </div>
+
                 <div class="modal fade"
                      id="cancelReservationModal"
                      tabindex="-1"
                      aria-labelledby="cancelReservationModalLabel"
+                     role="dialog"
                      aria-hidden="true">
                     <div class="modal-dialog">
                         <div class="modal-content">
                             <div class="modal-header">
-                                <h5 class="modal-title" id="cancelReservationModalLabel">Cancel Reservation</h5>
+                                <h2 class="modal-title" id="cancelReservationModalLabel">Cancel Reservation</h2>
                                 <button type="button"
                                         class="btn-close btn-green"
                                         data-bs-dismiss="modal"
@@ -119,10 +121,11 @@
                                 <button type="button"
                                         class="btn btn-green"
                                         data-bs-dismiss="modal">Keep reservation</button>
-                                <form id="cancelConfirm" method="POST" action="">
+                                <form id="cancelConfirm" method="POST" >
                                     {% csrf_token %}
                                     <button type="submit" class="btn btn-red">Confirm cancellation</button>
                                 </form>
+                            </div>
                             </div>
                         </div>
                     </div>
