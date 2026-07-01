@@ -58,14 +58,12 @@ class ContactRequest(models.Model):
     email = models.EmailField()
     phone = models.CharField(max_length=20, blank=True)
     message = models.TextField()
-    party_size = models.PositiveIntegerField(blank=True,null=True, validators=[MinValueValidator(10), MaxValueValidator(50)])
+    party_size = models.PositiveIntegerField(validators=[MinValueValidator(10), MaxValueValidator(50)])
     reservation_for = models.DateField(blank=True, null=True)
     created_at = models.DateTimeField(auto_now_add=True)
 
     def clean(self):
         if self.request_type=='private_dining':
-            if not self.party_size:
-                raise ValidationError({'party_size':'Please enter the party size for private dining reservation.'})
             if not self.reservation_for:
                 raise ValidationError({'reservation_for' : 'Please enter the date for private dining reservation.'})
         else:
