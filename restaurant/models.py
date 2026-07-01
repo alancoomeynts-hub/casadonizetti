@@ -1,5 +1,9 @@
 from django.db import models
 from django.contrib.auth.models import User
+from django.core.validators import MinValueValidator,MaxValueValidator
+from django.core.exceptions import ValidationError
+from bookings import forms
+
 
 # Create your models here.
 class Restaurant(models.Model):
@@ -40,3 +44,33 @@ class Profile(models.Model):
         return f'{self.user.username} Profile'
 
 
+class ContactUs(models.Model):
+    """Store messages sent to the restaurant's contact form."""
+    restaurant = models.ForeignKey(Restaurant, on_delete=models.CASCADE, related_name='contact_us')
+    request_type = models.CharField(max_length=20,
+                                    default='inquiry',
+                                    choices=(
+                                        ('private_dining', 'Private Dining Reservation'),
+                                        ('inquiry', 'Inquiry'),
+
+                                    ))
+    name = models.CharField(max_length=200)
+    email = models.EmailField()
+    phone = models.CharField(max_length=20, blank=True)
+    message = models.TextField()
+    party_size = models.PositiveIntegerField(blank=True,null=True, validators=[MinValueValidator(10), MaxValueValidator(50)])
+    reservation_for = models.DateField(blank=True, null=True)
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    def clean(self):
+        if self.request_type=='private_dining':
+            if not self.party_size:
+                raise ValidationError({'party_size':'Please enter the party size for private dining reservation.'})
+            if not self.reservation_for:
+                raise ValidationError({'reservation_for' : 'Please enter the date for private dining reservation.'})
+        else:
+            self.party_size=None
+            self.reservation_for=None
+
+    def __str__(self):
+        return f'{self.name} - {self.get_request_type_display()}'
