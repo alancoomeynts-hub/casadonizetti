@@ -76,15 +76,21 @@ function setupCancelModal() {
 function togglePrivateDiningFields(){
     const requestType = document.getElementById("id_request_type");
     const partySize=document.getElementById("div_id_party_size");
+    const partySizeInput=document.getElementById("id_party_size");
     const reservationFor=document.getElementById("div_id_reservation_for");
+    const reservationForInput=document.getElementById("id_reservation_for");
 
     function togglePrivateDiningFields() {
         if (requestType.value === "private_dining") {
             partySize.style.display = "block";
+            partySizeInput.required = true;
             reservationFor.style.display = "block";
+            reservationForInput.required = true;
         } else {
             partySize.style.display = "none";
+            partySizeInput.required = false;
             reservationFor.style.display = "none";
+            reservationForInput.required = false;
         }
     }
     requestType.addEventListener("change", togglePrivateDiningFields);
