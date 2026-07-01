@@ -49,8 +49,12 @@ def contact_us(request):
             contact_form=form.save(commit=False)
             contact_form.restaurant=Restaurant.objects.get(pk=1)
             contact_form.save()
-            messages.add_message(request,messages.SUCCESS,'Your message has been sent successfully.')
-    form=ContactUsForm()
+            if contact_form.request_type == 'inquiry':
+                messages.add_message(request,messages.SUCCESS,'Your inquiry has been sent successfully. We will get back to you soon.')
+            else:
+                messages.add_message(request,messages.SUCCESS,'Your private dining request has been logged. We will get back to you soon to discuss details.')
+    else:
+        form=ContactUsForm()
 
     return render(
         request,
