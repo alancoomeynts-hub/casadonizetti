@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block content %}
+    {% load static %}
+    {% load crispy_forms_tags %}
+    <section id="contact-us-form" class="container section-bg rounded-3 my-4 p-5">
+        <div class="row justify-content-center">
+            <div class="col-12 col-lg-6 mx-auto">
+                <h1 class="mb-3 text-center">Contact Us</h1>
+                <p class="text-center lead mb-4">
+                    Interested in reserving the restaurant for a private, fill in the form below <br>Have a general question or feedback? We'd love to hear from you!
+                </p>
+                <form method="post">
+                    {% csrf_token %}
+                    {{ form | crispy }}
+                    <button class="btn cta-btn btn-block" type="submit">Submit</button>
+                </form>
+            </div>
+        </div>
+    </section>
+{% endblock %}

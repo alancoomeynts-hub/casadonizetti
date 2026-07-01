@@ -2,6 +2,7 @@ from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, get_object_or_404
 from bookings.models import Reservation
 from bookings.forms import ReservationForm
+from .forms import ContactUsForm
 from .models import Restaurant, Profile
 from django.contrib import messages
 from allauth.account.views import SignupView
@@ -39,4 +40,13 @@ def profile_view(request):
             'reservations': reservations,
             'form': form,
         },
+    )
+
+def contact_us(request):
+    form=ContactUsForm(request.POST or None)
+
+    return render(
+        request,
+        "restaurant/contact_us.html",
+        {"form":form},
     )
