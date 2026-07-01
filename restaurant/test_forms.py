@@ -1,7 +1,9 @@
 from django.test import TestCase
 from django.contrib.auth.models import User
 from restaurant.signup_forms import CustomSignupForm
-from .models import Profile
+from django.urls import reverse
+from .models import Profile,Restaurant,ContactRequest
+from .forms import ContactUsForm
 
 class TestCustomSignupForm(TestCase):
 
@@ -70,3 +72,64 @@ class TestCustomSignupForm(TestCase):
         self.assertEqual(user.profile.address,'123 Main St')
 
 
+class TestContactForm(TestCase):
+    def setUp(self):
+        self.restaurant = Restaurant.objects.create(
+            name="Casa Donizetti"
+        )
+
+    def test_contact_form_create_valid_inquiry(self):
+        inquiry_form_response = ContactUsForm(
+            data={
+                "request_type": "inquiry",
+                "name": "Alan Coomey",
+                "email": "alan@example.com",
+                "phone": "0871234567",
+                "message": "I lost my key.",
+                "party_size": "",
+                "reservation_for": "",
+            },
+        )
+
+        self.assertTrue(inquiry_form_response.is_valid(), msg="Form is valid")
+
+    def test_contact_form_invalid_inquiry(self):
+        inquiry_form_response = ContactUsForm(
+            data={
+                "request_type": "inquiry",
+                "name": "",
+                "email": "",
+                "phone": "",
+                "message": "",
+                "party_size": "",
+            }
+        )
+
+        self.assertFalse(inquiry_form_response.is_valid(), msg="Form is invalid")
+
+    def test_contact_form_create_private_dining_reservation(self):
+        reservation_form_response = ContactUsForm(data={
+                "request_type": "private_dining",
+                "name": "Alan Coomey",
+                "email": "alan@example.com",
+                "phone": "0871234567",
+                "message": "I'd like to book a private room.",
+                "party_size": 12,
+                "reservation_for": "2026-07-20",
+               },
+            )
+
+        self.assertTrue(reservation_form_response.is_valid(), msg="Form is valid")
+
+    def test_contact_form_invalid_private_dining_reservation(self):
+        reservation_form_response = ContactUsForm(data={
+                "request_type": "private_dining",
+                "name": "Alan Coomey",
+                "email": "alan@example.com",
+                "phone": "0871234567",
+                "message": "I'd like to book a private room.",
+                "party_size": "",
+                "reservation_for": "",
+               },
+            )
+        self.assertFalse(reservation_form_response.is_valid(), msg="Form is invalid")

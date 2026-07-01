@@ -1,6 +1,6 @@
 from django.test import TestCase
 from django.urls import reverse
-from .models import Restaurant, Profile
+from .models import Restaurant, Profile, ContactRequest
 from bookings.forms import ReservationForm
 from bookings.models import Reservation, Table
 from django.contrib.auth import get_user_model
@@ -110,4 +110,43 @@ class ProfileViewsTest(TestCase):
         self.assertIn(reservation1, reservation_list)
         self.assertNotIn(reservation2, reservation_list)
 
+class ContactUsViewsTest(TestCase):
+    def setUp(self):
+        self.restaurant=Restaurant.objects.create(name="Casa Donizetti")
 
+    def test_render_contact_us(self):
+        response=self.client.get(reverse("contact_us"))
+
+        self.assertEqual(response.status_code, 200)
+        self.assertEqual('form',response.context)
+
+    def test_contact_us_creates_contact_request(self):
+        response = self.client.post(
+            reverse("contact_us"),
+            {
+                "request_type": "inquiry",
+                "name": "Alan Coomey",
+                "email": "alan@example.com",
+                "phone": "0871234567",
+                "message": "I lost my key.",
+            },
+        )
+
+        self.assertEqual(response.status_code, 200)
+        self.assertEqual(ContactRequest.objects.count(), 1)
+
+    def test_invalid_contact_us_does_not_create_contact_request(self):
+        response = self.client.post(
+            reverse("contact_us"),
+            {
+                "request_type": "private_dining",
+                "name": "Alan Coomey",
+                "email": "alan@example.com",
+                "phone": "0871234567",
+                "message": "Private dining please.",
+                "party_size": "",
+                "reservation_for": "",
+            },
+        )
+        self.assertEqual(response.status_code, 200)
+        self.assertEqual(ContactRequest.objects.count(), 0)
