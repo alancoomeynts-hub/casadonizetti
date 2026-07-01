@@ -32,4 +32,4 @@ class Reservation(models.Model):
     created_on = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
-        return f"{self.contact_name} - {self.reservation_for}"
+        return f"{self.contact_name} - {self.reservation_for.strftime('%d %b %Y, %H:%M')}"
