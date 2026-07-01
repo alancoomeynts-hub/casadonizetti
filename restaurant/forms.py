@@ -1,9 +1,9 @@
-from .models import ContactUs
+from .models import ContactRequest
 from django import forms
 
 class ContactUsForm(forms.ModelForm):
     class Meta:
-        model = ContactUs
+        model = ContactRequest
         fields = ('request_type','name','email','phone','message','party_size','reservation_for')
         widgets = {
             'request_type': forms.Select(attrs={'class':'form-select'}),

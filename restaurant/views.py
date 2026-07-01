@@ -43,7 +43,14 @@ def profile_view(request):
     )
 
 def contact_us(request):
-    form=ContactUsForm(request.POST or None)
+    if request.method == 'POST':
+        form=ContactUsForm(data=request.POST)
+        if form.is_valid():
+            contact_form=form.save(commit=False)
+            contact_form.restaurant=Restaurant.objects.get(pk=1)
+            contact_form.save()
+            messages.add_message(request,messages.SUCCESS,'Your message has been sent successfully.')
+    form=ContactUsForm()
 
     return render(
         request,

@@ -44,7 +44,7 @@ class Profile(models.Model):
         return f'{self.user.username} Profile'
 
 
-class ContactUs(models.Model):
+class ContactRequest(models.Model):
     """Store messages sent to the restaurant's contact form."""
     restaurant = models.ForeignKey(Restaurant, on_delete=models.CASCADE, related_name='contact_us')
     request_type = models.CharField(max_length=20,
