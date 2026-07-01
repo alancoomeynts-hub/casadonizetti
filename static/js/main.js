@@ -1,9 +1,15 @@
 document.addEventListener( "DOMContentLoaded", function() {
     const confirm_profile_page = document.getElementById("profile-details");
-    if (!confirm_profile_page) return;
+    const confirm_contact_us_page = document.getElementById("contact-us-form");
+    if (confirm_profile_page) {
+        setupEditModal();
+        setupCancelModal();
+    }
 
-    setupEditModal();
-    setupCancelModal();
+    if(confirm_contact_us_page){
+
+        togglePrivateDiningFields();
+    }
 
 });
 /**
@@ -64,3 +70,26 @@ function setupCancelModal() {
 
     }
 }
+/**
+ * Toggles the visibility of party size and reservation for fields based on the selected request type in the contact us form.
+ */
+function togglePrivateDiningFields(){
+    const requestType = document.getElementById("id_request_type");
+    const partySize=document.getElementById("div_id_party_size");
+    const reservationFor=document.getElementById("div_id_reservation_for");
+
+    function togglePrivateDiningFields() {
+        if (requestType.value === "private_dining") {
+            partySize.style.display = "block";
+            reservationFor.style.display = "block";
+        } else {
+            partySize.style.display = "none";
+            reservationFor.style.display = "none";
+        }
+    }
+    requestType.addEventListener("change", togglePrivateDiningFields);
+    togglePrivateDiningFields();
+
+}
+
+
