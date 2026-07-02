@@ -60,7 +60,7 @@
                                    href="{{ menu_url }}">Menu</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link{% if request.path == menu_url %}active{% endif %}"
+                                <a class="nav-link {% if request.path == contact_url %}active{% endif %}"
                                    href="{{ contact_url }}">Contact Us</a>
                             </li>
                             {% if user.is_authenticated %}
