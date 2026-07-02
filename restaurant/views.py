@@ -8,7 +8,18 @@ from django.contrib import messages
 from allauth.account.views import SignupView
 
 def restaurant_homepage(request):
-    """Render the restaurant homepage."""
+    """
+     Display the main:model:`restaurant.Restaurant` instance on the homepage.
+
+    **Context**
+
+    ``restaurant``
+        The primary instance of :model:`restaurant.Restaurant`.
+
+    **Template:**
+
+    :template:`restaurant/homepage.html`
+    """
     restaurant=get_object_or_404(Restaurant,pk=1)
     return render(request, 'restaurant/homepage.html', {'restaurant': restaurant})
 
@@ -25,7 +36,28 @@ class CustomSignupView(SignupView):
 
 @login_required
 def profile_view(request):
-    """Render the logged-in user's profile and reservations."""
+    """
+    Display the logged-in user's :model:`restaurant.Profile` and related
+    :model:`bookings.Reservation` instances.
+    **Context**
+
+    ``user``
+        The currently authenticated :model:`auth.User`.
+
+    ``profile``
+        The logged-in user's instance of :model:`restaurant.Profile`.
+
+    ``reservations``
+        A queryset of :model:`bookings.Reservation` instances belonging to the
+        logged-in user.
+
+    ``form``
+        An instance of :form:`bookings.forms.ReservationForm`.
+
+    **Template:**
+
+    :template:`restaurant/profile.html`
+    """
     user=request.user
     profile=get_object_or_404(Profile,user=user)
     reservations=Reservation.objects.filter(user=user)
@@ -43,6 +75,21 @@ def profile_view(request):
     )
 
 def contact_us(request):
+    """
+       Display and process the restaurant contact form for general enquiries and
+       private dining requests.
+
+       **Context**
+
+       ``form``
+           An instance of :form:`restaurant.forms.ContactUsForm`.
+
+       **Template:**
+
+       :template:`restaurant/contact_us.html`
+       """
+
+
     if request.method == 'POST':
         form=ContactUsForm(data=request.POST)
         if form.is_valid():

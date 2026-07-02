@@ -10,9 +10,23 @@ from django.utils import timezone
 # Create your views here.
 @login_required
 def reservation_view(request):
-    """Create a reservation for the logged-in user if a suitable table is available.
+    """
+    Create a reservation for the logged-in user in :model:`bookings.Reservation`
+    if a suitable :model:`bookings.Table` is available for the selected date,
+    time, and party size.
 
-    On success, save the booking and redirect to the homepage with a confirmation message.
+    On successful submission, the reservation is saved and the user is
+    redirected to the homepage with a confirmation message. If no suitable
+    table is available, the form is re-rendered with a non-field error.
+
+    **Context**
+
+    ``form``
+        An instance of :form:`bookings.forms.ReservationForm`.
+
+    **Template:**
+
+    :template:`reserve.html`
     """
 
     form=ReservationForm(request.POST or None)
