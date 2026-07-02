@@ -1,5 +1,5 @@
 from django.contrib.auth.decorators import login_required
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, redirect
 from bookings.models import Reservation
 from bookings.forms import ReservationForm
 from .forms import ContactUsForm
@@ -53,6 +53,7 @@ def contact_us(request):
                 messages.add_message(request,messages.SUCCESS,'Your inquiry has been sent successfully. We will get back to you soon.')
             else:
                 messages.add_message(request,messages.SUCCESS,'Your private dining request has been logged. We will get back to you soon to discuss details.')
+        return redirect('homepage')
     else:
         form=ContactUsForm()
 
