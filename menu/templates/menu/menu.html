@@ -14,7 +14,10 @@
                         <div class="card h-100">
                             <img src="{{ item.featured_image.url }}"
                                  alt="image of {{ item.name }}"
-                                 class="card-img-top">
+                                 class="card-img-top"
+                             width="400"
+                             height="300"
+                             {% if forloop.first %}fetchpriority="high"{% endif %}>
                             <div class="card-body">
                                 <h2 class="card-title">{{ item.name }}</h2>
                             </div>

@@ -26,7 +26,7 @@
              aria-label="navbar">
             <div class="container-fluid">
                 <a class="navbar-brand" href="{{ home_url }}">
-                    <img src="{% static 'images/logo.webp' %}" alt="Casa Donizetti Logo">
+                    <img src="{% static 'images/logo.webp' %}" width="200" height="34" alt="Casa Donizetti Logo">
                 </a>
                 <button class="navbar-toggler"
                         type="button"
@@ -188,6 +188,6 @@
                 crossorigin="anonymous"></script>
         <script src="https://kit.fontawesome.com/398116af51.js"
                 crossorigin="anonymous"></script>
-        <script src="{% static 'js/main.js' %}"></script>
+        <script src="{% static 'js/main.js' %}" defer></script>
     </body>
 </html>
