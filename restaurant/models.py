@@ -58,7 +58,7 @@ class ContactRequest(models.Model):
     email = models.EmailField()
     phone = models.CharField(max_length=20, blank=True)
     message = models.TextField()
-    party_size = models.PositiveIntegerField(validators=[MinValueValidator(10), MaxValueValidator(50)])
+    party_size = models.PositiveIntegerField(blank=True,null=True,validators=[MinValueValidator(10), MaxValueValidator(50)])
     reservation_for = models.DateField(blank=True, null=True)
     created_at = models.DateTimeField(auto_now_add=True)
 
